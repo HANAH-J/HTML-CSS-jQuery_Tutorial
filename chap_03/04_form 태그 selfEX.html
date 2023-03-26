@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>02_form_selfEX</title>
+</head>
+<body>
+	<form action="#" method="post">
+		이름 <input type="text" name="fname" size="10"><br>
+		비밀번호 <input type="password" name="password" size="10"><br><br>
+		응시 분야 <select name="depart" id="depart">
+			<option value="devel">개발부</option>
+			<option value="person">인사부</option>
+			<option value="market">홍보부</option>
+			</select><br><br>
+			본인사진첨부 <input type="file"><br><br>
+
+			<fieldset>
+				<legend>성별을 선택해 주세요</legend><br>
+				<input id="male" type="radio" name="gender" value="male">
+				<label for="male">남</label>
+				<input id="female" type="radio" name="gender" value="female">
+				<label for="female">여</label><br><br>
+			</fieldset>
+
+			<fieldset>
+				<legend>토익 점수대를 선택해주세요</legend><br>
+				<input id="700" type="radio" name="score">
+				<label for="700">700점대</label>
+				<input id="800" type="radio" name="score">
+				<label for="800">800점대
+				</label>
+				<input id="900" type="radio" name="score">
+				<label for="900">900점대</label><br><br>
+			</fieldset>
+
+			<fieldset>
+				<legend>보유 자격증을 선택해주세요</legend><br>
+				<input type="checkbox" value="com" id="com"><label for="com">컴퓨터활용능력</label>
+				<input type="checkbox" value="drive" id="drive"><label for="drive">운전면허</label>
+				<input type="checkbox" value="design" id="design"><label for="design">디자인관련</label>
+				<input type="checkbox" value="account" id="account"><label for="account">세무관련</label><br><br>
+			</fieldset>
+
+			<br>자기소개를 간단하게 적어주세요
+			<textarea name="introduce" id="introduce" cols="60" rows="10" placeholder="Insert Message"></textarea>
+
+			<br><br><input type="submit" value="저장">&nbsp;<input type="reset" value="취소">
+	</form>
+
+<hr>
+	<form action="#" method="post">
+		이름 <input type="text"><br>
+		비밀번호 <input type="password"><br>
+		응시분야
+		<select name="division" id="division">
+			<option value="plan">기획부</option>
+			<option value="sales">영업부</option>
+			<option value="account">총무부</option>
+		</select><br>
+		본인사진첨부 <input type="file"><br>
+
+		<fieldset>
+			<legend>성별을 선택해주세요</legend>
+			<input type="radio" name="gender" id="male" value="male">
+			<label for="male">남</label>
+			<input type="radio" name="gender">
+			<label for="female">여</label>
+		</fieldset>
+
+		<fieldset>
+			<legend>토익 점수대를 선택해주세요</legend>
+			<label for="600">
+				<input type="radio" value="600">600점대
+				</label>
+			<label for="700">
+				<input type="radio" value="700">700점대
+				</label>
+			<label for="800">
+				<input type="radio" value="800">800점대
+				</label>
+		</fieldset>
+
+		<fieldset>
+			<legend>보유 자격증을 선택해주세요</legend>
+			<input type="checkbox" value="com" id="com"><label for="com">컴퓨터활용능력</label>
+			<input type="checkbox" value="drive" id="drive"><label for="drive">운전면허</label>
+			<input type="checkbox" value="design" id="design"><label for="design">디자인관련</label>
+			<input type="checkbox" value="account" id="account"><label for="account">세무관련</label>
+		</fieldset>
+
+		<p>자기소개를 간단하게 적어주세요</p>
+		<textarea name="introduce" id="introduce" cols="30" rows="10" placeholder="내용"></textarea><br>
+		
+		<input type="submit" value="저장">
+		<input type="reset" value="취소">
+	</form>
+</body>
+</html>

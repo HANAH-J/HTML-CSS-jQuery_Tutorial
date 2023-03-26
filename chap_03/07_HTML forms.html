@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>01_HTML Forms</title>
+</head>
+<body>
+	<h2>HTML 폼</h2>
+	<form action="action_page.php">
+		<label for="fname">이름:</label><br>
+		<input type="text" id="fname" name="fname" value="하나"><br>
+		<label for="lname">성씨:</label><br>
+		<input type="text" id="lname" name="lname" value="전"><br><br>
+		<input type="submit" value="submit">
+	</form>
+
+<hr>
+
+	<h2>텍스트 필드</h2>
+	<form action="action_page.php">
+		<label for="fname">이름:</label><br>
+		<input type="text" id="fname" name="fname" value="하나"><br>
+		<label for="lname">성:</label><br>
+		<input type="text" id="lname" name="lname" value="전">
+	</form>
+
+<hr>
+
+	<h2>라디오 버튼</h2>
+	<p>좋아하는 웹 언어를 고르시오:</p>
+	<form>
+		<input type="Radio" id="html" name="fav_language" value="HTML">
+		<label for="html">HTML</label><br>
+		<input type="Radio" id="css" name="fav_language" value="CSS">
+		<label for="css">CSS</label><br>
+		<input type="Radio" id="javascript" name="fav_language" value="JavaScript">
+		<label for="javascript">JavaScript</label>
+
+<hr>
+
+		<h2>체크박스</h2>
+		<p>다음 <strong>소유 중인</strong> 탈 것을 모두 체크하시오:</p>
+		<form action="action_page.php">
+			<input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+			<label for="vehicle1">자전거</label><br>
+			<input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+			<label for="vehicle2">자동차</label><br>
+			<input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+			<label for="vehicle3">보트</label><br><br>
+			<input type="submit" value="submit">
+		</form>
+	</form>
+
+<hr>
+
+	<h2>제출 버튼</h2>
+	<form action="action_page.php">
+		<label for="fname">이름:</label><br>
+		<input type="text" id="fname" name="fname" value="하나"><br>
+		<label for="lname">성씨:</label><br>
+		<input type="text" id="lname" name="lname" value="전"><br><br>
+		<input type="submit" value="submit">
+	</form>
+
+<hr>
+
+	<h2>The name Attribute</h2>
+	<form action="action_page.php">
+		<label for="fname">이름:</label><br>
+		<input type="text" id="fname" name="fname" value="하나"><br><br>
+		<input type="submit" value="submit">
+	</form>
+</body>
+</html>

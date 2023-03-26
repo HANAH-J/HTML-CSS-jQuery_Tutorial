@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>01_form태그</title>
+</head>
+<body>
+	<form action="#" method="post">
+		<fieldset>
+			<legend>기본정보</legend>
+		first name <input type="text" placeholder="길동" name="first_name"><br>
+		last name <input type="text" placeholder="홍" name="lastName"><br>
+		주소 <input type="text" name="address"><br>
+		아이디 <input type="text" name="id"><br>
+		비밀번호 <input type="password" size="4" name="password"><br>
+		성별 <input id="male" type="radio" name="gender" value="male" checked>
+			<label for="male">남자</label>
+			<input id="female" type="radio" name="gender" value="female">
+			<label for="female">여자</label>
+		</fieldset>
+		<fieldset>
+			<legend>수강정보</legend>
+			<p>수강하고 싶은 과목을 체크해주세요</p>
+			<label for="kor">국어</label><input id="kor" type="checkbox" name="lecture" value="kor" checked>
+			<label for="en">영어</label><input id="en" type="checkbox" name="lecture" value="en">
+			<label for="math">수학</label><input id="math" type="checkbox" name="lecture" value="math">
+			<label for="sc">과학</label><input id="sc" type="checkbox" name="lecture" value="sc">
+		</fieldset>
+		<fieldset>
+			<legend>개인정보</legend>
+			<p>당신이 좋아하는 음식의 종류를 선택해주세요</p>
+			<select name="favorite_food" id="favorite_food">
+				<option value="ko">한식</option>
+				<option value="jp">일식</option>
+				<option value="cn">중식</option>
+			</select>
+			<select name="favorite_food" id="favorite_food" multiple>
+				<option value="ko">한식</option>
+				<option value="jp">일식</option>
+				<option value="cn">중식</option>
+			</select>
+			<p>당신의 사진을 업로드해주세요</p>
+			<input type="file">
+
+			<p>건의사항을 입력해주세요</p>
+			<textarea name="suggest" id="suggest" cols="60" rows="10"></textarea>
+
+			<p>원하는 개강날짜를 선택해주세요</p>
+			<input type="date">
+
+			<p>좋아하는 색상을 선택해주세요</p>
+			<input type="color">
+
+			<p>원하는 가격의 범위를 설정해주세요</p>
+			<input type="range">
+		</fieldset>
+		<br><input type="submit"> <input type="reset" value="다시입력">
+	</form>
+</body>
+</html>

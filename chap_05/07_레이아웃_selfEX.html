@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>03_레이아웃_selfEX</title>
+	<style>
+		*{margin: 0;
+		padding: 0;}
+		#wrapper{
+			width: 70%;
+			height: 500px;
+			margin: 0 auto;
+			border: 1px solid red;
+			background-color: darkturquoise;
+			text-align: center;
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+		}
+		#wrapper ul li.menu{
+			color: blueviolet;
+			font-size: 1.5em;
+			font-weight: bold;
+		}
+		#wrapper h1{
+			text-transform: uppercase;
+			/*lowercase 소문자
+			capitalize 첫번째 글자 대문자*/
+		}
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+		<!-- div#wrapper>h1{CONTENT}+ul>li{menu$}*5^ol>li{menu$}*5 -->
+		<h1>content</h1>
+		<ul>
+			<li class="menu">menu1</li>
+			<li>menu2</li>
+			<li class="menu">menu3</li>
+			<li>menu4</li>
+			<li class="menu">menu5</li>
+		</ul>
+		<ol>
+			<li>menu1</li>
+			<li>menu2</li>
+			<li>menu3</li>
+			<li>menu4</li>
+			<li>menu5</li>
+		</ol>
+	</div>
+</body>
+</html>

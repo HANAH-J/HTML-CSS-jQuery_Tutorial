@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>02_다양한 선택자와 스타일의 다양한 속성</title>
+	<style>
+		*{
+/*			m:0+p:0*/
+			margin: 0;
+			padding: 0;
+		}
+		body{background-color: beige;}
+		header, section{
+			border: 3px solid orange;
+		}
+		header h1 span{
+			font-size: 50px;
+			color: blue;
+		}
+		header > h1 > span{
+			background-color: skyblue;
+		}
+
+		header>h1, header h2{
+			background-color: yellow;
+		}
+		h3{
+			text-decoration: underline;
+			text-decoration-color: purple;
+		}
+		h1 strong{
+			color: red;
+			font-size: 1.5em;
+		}
+		div{
+			width: 1500px;
+			/*margin-top: 0;
+			margin-right: auto;
+			margin-bottom: 0;
+			margin-left: auto;*/
+			margin: 0 auto;
+/*			컨텐츠를 중앙으로 배치할 때 margin: 0 auto;를 사용*/
+		}
+		footer{
+			border: 1px solid red;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<header>
+			<h1>
+				<span>영화명 : 메간</span>
+			</h1>
+			<h2>
+				<span>감독: 제라드 존스톤</span>
+				<h1>공포 스릴러의 주작품이 많음</h1>
+			</h2>
+		</header>
+		<section>
+			<h3>출연: 앨리슨 윌리암스, 바이올렛 맥그로우</h3>
+			<h1>평론가 평점 <strong>★★★</strong></h1>
+			<h2>리뷰한줄: <span>공포영화 중에 몰입감 대박</span></h2>
+			<p>Lorem, ipsum dolor sit amet.</p>
+		</section>
+	</div>
+	<footer>
+		Lorem, ipsum dolor sit amet.
+	</footer>
+</body>
+</html>

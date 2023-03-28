@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>04_속성선택자</title>
+	<style>
+		form{
+			border: 1px solid red;
+			width: 60%;
+			margin: 100px auto;
+		}
+		input[type]{
+			font-size: 2em;
+		}
+		input[type="text"]{
+			color: orange;
+		}
+		input[type="password"]{
+			color: skyblue;
+		}
+		input[type="submit"]{
+			color: white;
+			background-color: orange;
+			border: none;
+		}
+		input{
+			margin: 5px;
+		}
+	</style>
+</head>
+<body>
+	<form action="#" name="frm">
+		<fieldset>
+			<legend>본인정보 입력</legend>
+			이름: <input type="text"><br>
+			비밀번호: <input type="password"><br>
+			전화번호: <input type="tel"><br>
+			<input type="submit" value="전송하기">
+		</fieldset>
+	</form>
+</body>
+</html>

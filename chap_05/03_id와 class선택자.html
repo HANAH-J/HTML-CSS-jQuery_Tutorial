@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>03_id와 class선택자</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#wrapper{
+/*			w1200*/
+			width: 1200px;
+			background-color: orange;
+		}
+		.bo{
+			border: 1px solid red;
+		}
+		.center{
+			margin: 0 auto;
+		}
+		.right{
+			margin: 0 0 0 auto;
+		}
+		ol li, ul li{
+			list-style: none;
+		}
+		.menu span{
+			color: red;
+			background-color: yellow;
+			font-size: 2em;
+		}
+/*		span태그이면서 클래스명이 import인 선택자*/
+		span.import{
+			color: blue;
+			background-color: pink;
+			font-size: 1.5em;
+			font-weight: bold;
+		}
+		.text-align-center{
+			text-align: center;
+		}
+		.margin-top-100{
+			margin-top: 100px;
+		}
+		.margin-bottom-100{
+			margin-bottom: 100px;
+		}
+		.box{
+			width: 400px;
+			height: 300px;
+		}
+		.box.right{
+			background-color: tomato;
+			opacity: 0.5;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrapper" class="center bo">
+		<div class="bo margin-top-100 margin-bottom-100">
+			<h1 class="text-align-center"><mark>점심</mark> 때 먹고싶은 <em class="import">메뉴</em>리스트</h1>
+			<ol class="text-align-center">
+				<li class="menu">한솥도시락 <span>5000원</span></li>
+				<li class="menu">버거킹 <span>6000원</span></li>
+				<li class="menu">서브웨이 <span>6000원</span></li>
+				<li class="menu">롤링파스타 <span>7000원</span></li>
+				<li class="menu">도시락 <span>7000원</span></li>
+			</ol>
+		</div>
+		<p class="box bo center">해당 문서에서 유일하게 주는 스타일을 지정하고 싶을 때는 아이디를 부여하고 <span class="import">id="아이디명"</span>으로 속성을 추가한다.</p>
+		<p class="box bo right">해당 문서에서 같은 스타일을 다양한 태그에 동일하게 적용하고 싶을 때는 클래스를 부여하고 <span class="import">class="클래스명"</span>으로 속성을 추가한다.</p>
+	</div>
+</body>
+</html>

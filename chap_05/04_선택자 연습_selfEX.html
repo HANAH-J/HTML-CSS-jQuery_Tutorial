@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>04_선택자 연습_selfEX</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.w300{
+			width: 300px;
+		}
+		.center{
+			margin: 0 auto 50px auto;
+		}
+		.right{
+			margin: 0 0 0 auto;
+		}	
+		.txt_center{
+			text-align: center;
+		}
+		#top{
+			background-color: yellow;
+			color: tomato;
+		}
+		#top p, h1{
+			border: 3px solid red;
+		}
+		#top span{
+			background-color: aqua;
+			color: white;
+		}
+		h2.bo_dot{
+			border: 5px dotted green;
+		}
+		h3.bo_dot{
+			border: 5px dotted green;
+		}
+		.bo_dash{
+			border: 5px dashed blue;
+		}
+		.bo_dash span{
+			color: tomato;
+			background-color: lightgrey;
+			text-decoration: underline;
+			text-decoration-color: red;
+			font-weight: bold;
+			font-size: 2em;
+		}
+	</style>
+</head>
+<body>
+	<!-- div#top -->
+	<div id="top">
+		<p>태그를 선택해서 <span>스타일</span>을 주고 싶다면?</p>
+		<p class="txt_center">태그 선택자를 사용하면 됩니다.</p>
+		<h1>동일한 <span>스타일</span>을 같이 적용하고 싶다면?</h1>
+	</div>
+	<!-- h2.bo_dot.txt_center -->
+	<h2 class="bo_dot txt_center">
+		그룹으로 묶을 땐 콤마,를 이용하여 그룹으로 선택자를 묶을 수 있습니다.
+	</h2>
+	<h2 class="text_center">
+		h2 태그이면서 클래스명이 text_center인 요소에 스타일을 주려면 'h2.text_center'로 선택자를 사용합니다.
+	</h2>
+	<div class="center bo_dash w300">
+		<p>나 <span>전하나</span>는 세상에서 가장 소중한 존재입니다.</p>
+		<h3>지금 이 순간도 내 인생에서 가장 소중한 시간입니다.</h3>
+	</div>
+	<!-- div.bo_dash.w300.right -->
+	<div class="bo_dash w300 right">
+		<p>하지만 세상의 모든 존재는 <span>각자가 모두</span>소중한 존재이지요.</p>
+		<h3 class="bo_dot">내 인생의 최대의 목표는 즐겁고 건강하게 사는 것입니다. 곧, 행복입니다.</h3>
+	</div>
+</body>
+</html>

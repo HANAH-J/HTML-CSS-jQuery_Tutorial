@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>06_메인페이지 레이아웃</title>
+	<style>
+		*{margin: 0;
+		padding: 0;}
+		div {
+			border: 1px solid lightgray;
+		}
+		#wrapper{
+			width: 800px;
+			margin: 10px auto;
+			text-align: center;
+			text-transform: uppercase;
+			padding: 10px;
+		}
+		ul li{
+			list-style: none;
+			text-transform: lowercase;
+		}
+		#header, #footer{
+			height: 100px;
+			line-height: 100px;
+		}
+		#header{
+			margin-bottom: 5px;
+		}
+		#nav{
+			height: 100px;
+			padding: 10px;
+			margin-bottom: 10px;
+		}
+		#nav ul{
+			width: 80%;
+			border: 1px solid lightgray;
+			margin: 20px auto 0;
+			overflow: hidden;
+		}
+		#nav li{
+			width: 20%;
+			height: 50px;
+			border: 1px solid gray;
+			float: left;
+			box-sizing: border-box;
+			line-height: 50px;
+		}
+		#section{
+/*			border-color: red;*/
+			overflow: hidden;
+			box-sizing: border-box;
+			width: 100%;
+			padding: 10px;
+		}
+		#article{
+			width: 78%;
+			height: 500px;
+			padding: 10px;
+			float: left;
+			box-sizing: border-box;
+			margin-right: 2%;
+		}
+		#aside{
+			width: 20%;
+			height: 500px;
+			padding: 10px;
+			float: left;
+			box-sizing: border-box;
+		}
+		#footer{
+			margin-top: 10px;
+		}
+	</style>
+</head>
+<body>
+	<!-- div#wrapper>div#header{HEADER}+(div#nav{NAVIGATION}>ul>li{menu$}*5)+(div#section>div#article{CONTENT}+div#aside{BANNER})+div#footer{FOOTER} -->
+	<div id="wrapper">
+		<div id="header">HEADER</div>
+		<div id="nav">NAVIGATION
+			<ul>
+				<li>menu1</li>
+				<li>menu2</li>
+				<li>menu3</li>
+				<li>menu4</li>
+				<li>menu5</li>
+			</ul>
+		</div>
+		<div id="section">
+			<div id="article">CONTENT</div>
+			<div id="aside">BANNER</div>
+		</div>
+		<div id="footer">FOOTER</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>04_float를 이용한 레이아웃</title>
+	<style>
+		*{margin: 0;
+		padding: 0;}
+		#wrapper{
+			border: 3px solid grey;
+			width: 70%;
+			margin: 10px auto;
+		}
+		#wrapper>div{
+			border: 1px solid lightgray;
+		}
+		#wrapper>div>div{
+			border: 1px solid lightgray;
+			width: 100px;
+			height: 100px;
+			padding: 10px;
+			margin: 5px;
+		}
+		.left, .right{
+			overflow: hidden;
+		}
+		.left div {
+			float: left;
+		}
+		.right div {
+			float: right;
+		}
+	</style>
+</head>
+<body>
+	<!-- div#wrapper>div.left>div*2^div.right>div*2 -->
+	<div id="wrapper">
+		<div class="left">
+			<div>first</div>
+			<div>second</div>
+		</div>
+		<div class="right">
+			<div>first</div>
+			<div>second</div>
+		</div>
+	</div>
+</body>
+</html>

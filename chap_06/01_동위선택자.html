@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>01_동위선택자</title>
+	<style>
+		ul li{
+/*			lisn*/
+			list-style: none;
+			font-size: 2em;
+		}
+		#korean~li{
+			color: green;
+			font-size: 2.5em;
+			font-weight: bold;
+		}
+		#korean+li{
+			background-color: orange;
+		}
+	</style>
+</head>
+<body>
+	<h1>메뉴판에서 원하는 식사를 선택해주세요</h1>
+	<ul>
+		<li>베트남 요리</li>
+		<li id="korean">한식</li>
+		<li>중식</li>
+		<li>일식</li>
+		<li>이탈리안 푸드</li>
+		<li>프랑스 요리</li>
+	</ul>
+	<h2>동위선택자(형제관계를 선택하는 선택자)는 +, ~ 가 있다. +는 바로 오른쪽에 오는 형제를 선택하는 근접 선택자이고 ~은 오른쪽에 있는 형제들을 모두 선택한다. 이때, 자기자신은 선택하지 않는다!!</h2>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>03_box 모델의 이해</title>
+	<style>
+		*{margin: 0;
+		padding: 0;}
+		#wrapper{
+			background-color: linen;
+			text-align: center;
+			width: 1000px;
+			margin: 0 auto;
+			overflow: hidden;
+		}
+		#wrapper div{
+			border: 3px solid blue;
+		}
+		#wrapper>div{
+			border: 1px solid red;
+		}
+		.main > div{
+			width: 100px;
+			height: 100px;
+			line-height: 100px;
+		}
+		.main.left{
+			overflow: hidden;
+			width: 878px;
+			float: left;
+		}
+		.main.left div{
+			float: left;
+			background-color: orange;
+			padding: 50px;
+/*			margin: 10px;*/
+		}
+
+		.main.right{
+			overflow: hidden;
+			width: 1000px;
+		}
+		.main.right div{
+			float: right;
+			background-color: skyblue;
+			padding: 50px;
+			box-sizing: border-box;
+/*			margin: 10px;*/
+		}
+		.layout{
+			background-color: pink;
+			overflow: hidden;
+			width: 1000px;
+		}
+		.layout section{
+			width: 800px;
+			height: 500px;
+			background-color: blue;
+			color: white;
+			padding: 10px;
+			float: left;
+			box-sizing: border-box;
+/*			margin-right: 1px;*/
+		}
+		.layout aside{
+			width: 200px;
+			height: 500px;
+			background-color: aqua;
+			padding: 10px;
+			float: left;
+			box-sizing: border-box;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+		<div class="main left">
+			<div>box1</div>
+			<div>box2</div>
+			<div>box3</div>
+			<div>box4</div>
+			<div>box5</div>
+		</div>
+		<div class="main right">
+			<div>box1</div>
+			<div>box2</div>
+			<div>box3</div>
+			<div>box4</div>
+			<div>box5</div>
+		</div>
+		<div class="main layout">
+			<section>section</section>
+			<aside>aside</aside>
+		</div>
+		<h1>width, height에 padding과 border두께를 포함시키기 위해서 box-sizing:border-box로 처리한다. 단, margin은 포함이 안 된다!!</h1>
+	</div>
+</body>
+</html>

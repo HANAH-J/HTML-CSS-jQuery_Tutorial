@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>05_display속성</title>
+	<style>
+		*{margin: 0;
+		padding: 0;}
+		#header div{
+			background-color: yellow;
+			border: 1px solid orange;
+			display: inline;
+		}
+		#header span{
+			background-color: blue;
+			color: white;
+			width: 100px;
+			height: 100px;
+			display: inline-block;
+			margin: 5px;
+		}
+		p{
+			background-color: orange;
+			width: 100px;
+			height: 100px;
+/*			display: none;*/
+			visibility: visible;
+			visibility: hidden;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+		<h1>display 속성값으로는 네 가지 속성값이 있다. none, block, inline, inline-block. 각각의 속성은 변경 가능하고 inline의 경우는 width, height 설정값이 인식하지 않는다. inline-block의 경우에는 inline 요소처럼 가로로 배치되지만 width, height의 설정값은 인식한다!</h1>
+		<div id="header">
+			<div>menu01</div>
+			<div>menu02</div>
+			<div>menu03</div>
+			<div>menu04</div>
+			<div>menu05</div>
+			<p>block</p>
+			<span>span01</span>
+			<span>span02</span>
+			<span>span03</span>
+			<span>span04</span>
+			<span>span05</span>
+		</div>
+	</div>
+</body>
+</html>

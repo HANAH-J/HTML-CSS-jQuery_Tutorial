@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>05_starbucks navigation_selfEX</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap" rel="stylesheet">
+	<style>
+		@import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+
+.nanummyeongjo * {
+ font-family: 'Nanum Myeongjo', serif;
+}
+		body{
+			font-family: 'Nanum Myeongjo', serif;
+		}
+		*{margin: 0;
+		padding: 0;}
+		nav{
+			width: 70%;
+			margin: 0 auto;
+			overflow: hidden;
+		}
+		nav li{
+			list-style: none;
+			float: left;
+			width: 16.666%;
+			box-sizing: border-box;
+			text-align: center;
+			height: 50px;
+			line-height: 50px;
+		}
+		nav li a{
+			text-decoration: none;
+			font-size: 1.2em;
+			color: white;
+			display: block;
+/*			font-family: 'Agency FB';*/
+		}
+		nav li:nth-child(odd){
+			background-color: #157515;
+		}
+		nav li:nth-child(even){
+			background-color: #B32525;
+		}
+		nav li:first-child{
+			border-radius: 20px 0 0 20px;
+		}
+		nav li:last-child{
+			border-radius: 0 20px 20px 0;
+		}
+		nav li:hover{
+			background-color: purple;
+		}
+		h1{
+			font-family: 'East Sea Dokdo', cursive;
+		}
+	</style>
+</head>
+<body>
+	<nav>
+		<ul>
+			<li><a href="#">my starbucks</a></li>
+			<li><a href="#">coffee</a></li>
+			<li><a href="#">store</a></li>
+			<li><a href="#">reward</a></li>
+			<li><a href="#">what's new</a></li>
+			<li><a href="#">custom</a></li>
+		</ul>
+	</nav>
+	<h1>web font를 사용하면 사용자의 컴퓨터에 설치되어 있지 않은 폰트도 서버에서 다운받아서 브라우저에 띄울 수 있다. 이때 link태그 주소를 head태그 안에 넣거나 @import 주소값을 style태그 안에 넣어주고 font-family를 내가 적용하고 싶은 태그 선택자 안에 속성으로 설정한다.</h1>
+</body>
+</html>

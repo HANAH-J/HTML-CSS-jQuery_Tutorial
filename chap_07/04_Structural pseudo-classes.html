@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>04_Structural pseudo-classes</title>
+	<style>
+		li{
+			list-style: none;
+			border: 1px solid gray;
+			width: 100%;
+			background-color: beige;
+			padding: 10px;
+		}
+		li a{
+			width: 100%;
+			display: block;
+		}
+		li a:visited{
+			color: green;
+		}
+		nav{
+			width: 150px;
+			float: left;
+			margin: 10px;
+		}
+		body{
+			overflow: hidden;
+		}
+		nav#left li:nth-child(3){
+			background-color: blue;
+		}
+		nav#left li:nth-child(3) a{
+			color: white;
+		}
+		nav#right li:nth-of-type(2){
+			background-color: blue;
+		}
+		nav#right li:nth-of-type(2) a{
+			color: white;
+		}
+		nav#left li:first-child, nav#left li:last-child{
+			background-color: orange;
+		}
+		nav#right li:nth-child(odd){
+			background-color: red;
+		}
+		nav#right li:nth-child(even){
+			background-color: green;
+		}
+		nav#left li:nth-child(2n+1){
+			background-color: red;
+		}
+		nav#left li:nth-child(2n){
+			background-color: green;
+		}
+		nav#special li:nth-child(3n+2){
+			background-color: pink;
+		}
+		#circle{
+			width: 200px;
+			height: 200px;
+			background-color: lightblue;
+			text-align: center;
+			line-height: 200px;
+			clear: both;
+			border-radius: 10px 20px 30px 40px;
+			border-radius: 50px 100px 10px;
+			border-radius: 100px;
+/*			왼쪽 상단부터 시계방향으로 모가 둥근 반지름이 인식한다.*/
+		}
+	</style>
+</head>
+<body>
+	<h1>구조 선택자는 부모를 기준으로 몇 번째 자식인지를 선택할 수 있다. nth-child는 태그와는 상관없이 몇 번째 자식인지를 선택하고 nth-of-type은 선택한 태그와 같은 태그만 세어서 몇 번째 자식인지를 선택한다!</h1>
+	<nav id="left">
+		<ul>
+			<li><a href="http://www.naver.com" target="_blank">menu1</a></li>
+			<div>menu</div>
+			<li><a href="#">menu2</a></li>
+			<li><a href="#">menu3</a></li>
+			<li><a href="#">menu4</a></li>
+			<li><a href="#">menu5</a></li>
+		</ul>
+	</nav>
+	<nav id="right">
+		<ul>
+			<li><a href="http://www.naver.com" target="_blank">menu1</a></li>
+			<div>menu</div>
+			<li><a href="#">menu2</a></li>
+			<li><a href="#">menu3</a></li>
+			<li><a href="#">menu4</a></li>
+			<li><a href="#">menu5</a></li>
+		</ul>
+	</nav>
+	<nav id="special">
+		<ul>
+			<li><a href="http://www.naver.com" target="_blank">menu1</a></li>
+			<div>menu</div>
+			<li><a href="#">menu2</a></li>
+			<li><a href="#">menu3</a></li>
+			<li><a href="#">menu4</a></li>
+			<li><a href="#">menu5</a></li>
+			<li><a href="#">menu6</a></li>
+			<li><a href="#">menu7</a></li>
+			<li><a href="#">menu8</a></li>
+			<li><a href="#">menu9</a></li>
+		</ul>
+	</nav>
+	<div id="circle">circle</div>
+</body>
+</html>

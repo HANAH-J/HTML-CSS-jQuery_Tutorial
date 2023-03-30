@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>06_layout practice</title>
+	<style>
+		*{margin: 0;
+		padding: 0;}
+		div{
+			border: 1px solid gray;
+		}
+		#wrapper{
+			width: 1200px;
+			margin: 0 auto;
+			text-align: center;
+			text-transform: uppercase;
+			padding: 1%;
+		}
+		/*header style*/
+		div#header{
+			height: 200px;
+			line-height: 200px;
+			padding-top: 100px;
+			margin-bottom: 1%;
+		}
+		div#header h1{
+			border: 1px solid red;
+			width: 100px;
+			height: 100px;
+			margin: 0 auto;
+			line-height: 100px;
+			border-radius: 50px;
+		}
+
+		/*nav style*/
+		div#nav{
+			padding: 20px;
+			margin-bottom: 1%;
+		}
+		div#nav p{
+			margin-bottom: 20px;
+		}
+		div#nav ul{
+			width: 80%;
+			margin: 0 auto;
+			overflow: hidden;
+		}
+		div#nav ul li{
+			list-style: none;
+			border: 1px solid red;
+			width: 20%;
+			float: left;
+			box-sizing: border-box;
+			height: 50px;
+			line-height: 50px;
+			/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fffbef+0,ffec99+24,fba6e1+50,ff7cd8+100 */
+background: rgb(255,251,239); /* Old browsers */
+background: -moz-linear-gradient(left,  rgba(255,251,239,1) 0%, rgba(255,236,153,1) 24%, rgba(251,166,225,1) 50%, rgba(255,124,216,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  rgba(255,251,239,1) 0%,rgba(255,236,153,1) 24%,rgba(251,166,225,1) 50%,rgba(255,124,216,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  rgba(255,251,239,1) 0%,rgba(255,236,153,1) 24%,rgba(251,166,225,1) 50%,rgba(255,124,216,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fffbef', endColorstr='#ff7cd8',GradientType=1 ); /* IE6-9 */
+
+		}
+		div#nav ul li a{
+			text-decoration: none;
+			text-transform: lowercase;
+		}
+
+		/*#main style*/
+		div#main{
+			padding: 1%;
+			overflow: hidden;
+		}
+		div#main #section{
+			width: 79%;
+			float: left;
+			box-sizing: border-box;
+			height: 500px;
+			margin-right: 1%;
+		}
+		div#main #aside{
+			width: 20%;
+			float: left;
+			box-sizing: border-box;
+			height: 500px;
+			background-color: yellow;
+		}
+		/*#section style*/
+		#section{
+			padding: 1%;
+		}
+		#section .article{
+			width: 49%;
+			float: left;
+			box-sizing: border-box;
+			border-color: blue;
+		}
+		#section .article:nth-of-type(odd){
+			margin-right: 1%;
+		}
+		#section .article:nth-of-type(even){
+			margin-left: 1%;
+		}
+		/*footer style*/
+		div#footer{
+			padding: 100px;
+		}
+	</style>
+</head>
+<body>
+	<!-- div#wrapper>(div#header>h1{logo})+(div#nav>p{navigation}+ul>li*5>a{menu$})+(div#main>div#section>p{content}+div.article*4>h2{title$}+img^^div#aside>p{banner})+div#footer>p{footer} -->
+	<div id="wrapper">
+		<div id="header">
+			<h1>logo</h1>
+		</div>
+		<div id="nav">
+			<p>navigation</p>
+			<ul>
+				<li><a href="">menu1</a></li>
+				<li><a href="">menu2</a></li>
+				<li><a href="">menu3</a></li>
+				<li><a href="">menu4</a></li>
+				<li><a href="">menu5</a></li>
+			</ul>
+		</div>
+		<div id="main">
+			<div id="section">
+				<p>content</p>
+				<div class="article">
+					<h2>title1</h2>
+					<img src="https://via.placeholder.com/200x100 ?text=placeholdimg" alt="">
+				</div>
+				<div class="article">
+					<h2>title2</h2>
+					<img src="https://via.placeholder.com/200x100/55D4B1" alt="">
+				</div>
+				<div class="article">
+					<h2>title3</h2>
+					<img src="https://via.placeholder.com/200x100/55D4B1/FC7474" alt="">
+				</div>
+				<div class="article">
+					<h2>title4</h2>
+					<img src="https://via.placeholder.com/200x100/55D4B1/FFFFFF ?text=placeholdimg" alt="">
+				</div>
+			</div>
+			<div id="aside">
+				<p>banner</p>
+			</div>
+		</div>
+		<div id="footer">
+			<p>footer</p>
+		</div>
+	</div>
+</body>
+</html>

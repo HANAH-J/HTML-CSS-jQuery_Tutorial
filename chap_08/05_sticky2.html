@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>05_sticky의 특징</title>
+	<style>
+		*{margin: 0;
+		padding: 0;}
+		html,body{
+			height: 5000px;
+		}
+		#wrapper{
+			background-color: beige;
+		}
+		.box{
+			width: 200px;
+			height: 200px;
+			background-color: orange;
+			margin: 10px;
+		}
+		.sticky_parent{
+			background-color: pink;
+			position: absolute;
+			right: 0;
+			top: 200px;
+			height: 1000px;
+			/*overflow: hidden;*/
+		}
+		.sticky{
+			background-color: lightblue;
+			position: sticky;
+			top: 50px;
+			width: 150px;
+			height: 150px;
+			background-image: url(img/character_window.png);
+			/*background-size: contain;*/
+			background-size: cover;
+			/*background-size: 100% 100%;*/
+		}
+	</style>
+</head>
+<body>
+	<!-- div#wrapper>.box{box$}*5 -->
+	<div id="wrapper">
+		<div class="box">box1</div>
+		<div class="box">box2</div>
+		<div class="box sticky_parent">
+			<div class="box sticky">sticky</div>
+		</div>
+		<div class="box">box4</div>
+		<div class="box">box5</div>
+	</div>
+</body>
+</html>

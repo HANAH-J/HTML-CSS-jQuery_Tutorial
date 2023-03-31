@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>02_fixed</title>
+	<style>
+		*{margin: 0;
+		padding: 0;}
+		#wrapper{
+			width: 100%;
+			text-transform: uppercase;
+		}
+		header, #top, #logo, #carousel, section, article{
+			border: 1px solid gray;
+		}
+		header{
+			width: 1200px;
+			margin: 0 auto;
+		}
+		header, section{
+			width: 1200px;
+			margin: 0 auto;
+		}
+		header li{
+			list-style: none;
+		}
+		header li a{
+			text-decoration: none;
+		}
+
+		/*#top style*/
+		header #top{
+			overflow: hidden;
+			padding: 10px;
+		}
+		header #top nav{
+			width: 50%;
+			float: left;
+		}
+		header #top nav#gnb li{
+			width: 25%;
+			float: left;
+			border: 1px solid gray;
+			text-align: center;
+			box-sizing: border-box;
+			height: 30px;
+		}
+		header #top input[type="search"]{
+			width: 40%;
+			float: left;
+			height: 30px;
+			margin-left: 0.5%;
+		}
+		header #top input[type="submit"]{
+			height: 30px;
+			width: 8%;
+			margin-left: 1%;
+		}
+
+		/*#logo style*/
+		#logo{
+			padding: 100px 30px 30px;
+		}
+		#logo h1{
+			width: 100px;
+			height: 100px;
+			border: 1px solid gray;
+			margin: 0 auto 30px;
+			line-height: 100px;
+			border-radius: 50px;
+		}
+		#logo #lnb{
+			/*border: 1px solid orange;*/
+			width: 70%;
+			margin: 0 auto;
+			overflow: hidden;
+		}
+		#logo nav#lnb li{
+			width: 23%;
+			border: 1px solid gray;
+			float: left;
+			box-sizing: border-box;
+			text-align: center;
+			height: 30px;
+			margin: 0 1%;
+		}
+
+		/*#carousel style*/
+		#carousel{
+			padding: 100px 100px 50px;
+			background-color: lightgray;
+			text-align: center;
+		}
+		#carousel h1{
+			border: 1px solid gray;
+			text-align: center;
+			width: 80%;
+			margin: 0 auto 30px;
+			background-color: white;
+		}
+
+		/*#section style*/
+		section #main_contents{
+			width: 80%;
+			margin: 0 auto;
+		}
+		section{
+			overflow: hidden;
+		}
+		section article{
+			width: 33.333%;
+			float: left;
+			box-sizing: border-box;
+			text-align: center;
+		}
+		/*#footer style*/
+		#footer{
+			background-color: lightgray;
+			padding: 100px;
+		}
+		/*#top의 position을 fixed로 변환*/
+		#top{
+			background-color: #76CD92;
+			position: fixed;
+			width: 1180px;
+		}
+	</style>
+</head>
+<body>
+	<!-- div#wrapper>(header>div#top>nav>ul>li*4>a{menu$}^^^input[type="search"]+input[type="submit" value="검색"]) -->
+	<div id="wrapper">
+		<header>
+			<div id="top">
+				<nav id="gnb">
+					<ul>
+						<li><a href="">menu1</a></li>
+						<li><a href="">menu2</a></li>
+						<li><a href="">menu3</a></li>
+						<li><a href="">menu4</a></li>
+					</ul>
+				</nav>
+				<input type="search">
+				<input type="submit" value="검색">
+			</div>
+			<!-- div#logo>h1{logo}+nav>li*4>a{menu$} -->
+			<div id="logo">
+				<h1>logo</h1>
+				<nav id="lnb">
+					<li><a href="">menu1</a></li>
+					<li><a href="">menu2</a></li>
+					<li><a href="">menu3</a></li>
+					<li><a href="">menu4</a></li>
+				</nav>
+			</div>
+		</header>
+		<!-- div#carousel>h1{image scroller}+p{lorem5}*2 -->
+		<div id="carousel">
+			<h1>image scroller</h1>
+			<p>Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Soluta, similique!</p>
+			<p>Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Soluta, similique!</p>
+		</div>
+		<!-- section>article*6>img[src="https://via.placeholder.com/300x200"]+h2{title}+p{lorem5}*2 -->
+		<section>
+			<div id="main_contents">
+				<article>
+					<img src="https://via.placeholder.com/300x200" alt="">
+					<h2>title</h2>
+					<p>Lorem ipsum dolor sit, amet.</p>
+					<p>Lorem, ipsum dolor sit amet.</p>
+				</article>
+				<article>
+					<img src="https://via.placeholder.com/300x200" alt="">
+					<h2>title</h2>
+					<p>Lorem ipsum dolor sit amet.</p>
+					<p>Lorem ipsum dolor sit amet.</p>
+				</article>
+				<article>
+					<img src="https://via.placeholder.com/300x200" alt="">
+					<h2>title</h2>
+					<p>Lorem ipsum dolor sit amet.</p>
+					<p>Lorem ipsum dolor sit, amet.</p>
+				</article>
+				<article>
+					<img src="https://via.placeholder.com/300x200" alt="">
+					<h2>title</h2>
+					<p>Lorem ipsum dolor sit amet.</p>
+					<p>Lorem ipsum dolor, sit amet.</p>
+				</article>
+				<article>
+					<img src="https://via.placeholder.com/300x200" alt="">
+					<h2>title</h2>
+					<p>Lorem ipsum dolor, sit amet.</p>
+					<p>Lorem ipsum dolor sit amet.</p>
+				</article>
+				<article>
+					<img src="https://via.placeholder.com/300x200" alt="">
+					<h2>title</h2>
+					<p>Lorem, ipsum dolor sit amet.</p>
+					<p>Lorem ipsum dolor sit amet.</p>
+				</article>
+			</div>
+		</section>
+		<section>
+			<div id="main_contents">
+				<article>
+					<img src="https://via.placeholder.com/300x200" alt="">
+					<h2>title</h2>
+					<p>Lorem ipsum dolor sit, amet.</p>
+					<p>Lorem, ipsum dolor sit amet.</p>
+				</article>
+				<article>
+					<img src="https://via.placeholder.com/300x200" alt="">
+					<h2>title</h2>
+					<p>Lorem ipsum dolor sit amet.</p>
+					<p>Lorem ipsum dolor sit amet.</p>
+				</article>
+				<article>
+					<img src="https://via.placeholder.com/300x200" alt="">
+					<h2>title</h2>
+					<p>Lorem ipsum dolor sit amet.</p>
+					<p>Lorem ipsum dolor sit, amet.</p>
+				</article>
+				<article>
+					<img src="https://via.placeholder.com/300x200" alt="">
+					<h2>title</h2>
+					<p>Lorem ipsum dolor sit amet.</p>
+					<p>Lorem ipsum dolor, sit amet.</p>
+				</article>
+				<article>
+					<img src="https://via.placeholder.com/300x200" alt="">
+					<h2>title</h2>
+					<p>Lorem ipsum dolor, sit amet.</p>
+					<p>Lorem ipsum dolor sit amet.</p>
+				</article>
+				<article>
+					<img src="https://via.placeholder.com/300x200" alt="">
+					<h2>title</h2>
+					<p>Lorem, ipsum dolor sit amet.</p>
+					<p>Lorem ipsum dolor sit amet.</p>
+				</article>
+			</div>
+		</section>
+		<section>
+			<div id="main_contents">
+				<article>
+					<img src="https://via.placeholder.com/300x200" alt="">
+					<h2>title</h2>
+					<p>Lorem ipsum dolor sit, amet.</p>
+					<p>Lorem, ipsum dolor sit amet.</p>
+				</article>
+				<article>
+					<img src="https://via.placeholder.com/300x200" alt="">
+					<h2>title</h2>
+					<p>Lorem ipsum dolor sit amet.</p>
+					<p>Lorem ipsum dolor sit amet.</p>
+				</article>
+				<article>
+					<img src="https://via.placeholder.com/300x200" alt="">
+					<h2>title</h2>
+					<p>Lorem ipsum dolor sit amet.</p>
+					<p>Lorem ipsum dolor sit, amet.</p>
+				</article>
+				<article>
+					<img src="https://via.placeholder.com/300x200" alt="">
+					<h2>title</h2>
+					<p>Lorem ipsum dolor sit amet.</p>
+					<p>Lorem ipsum dolor, sit amet.</p>
+				</article>
+				<article>
+					<img src="https://via.placeholder.com/300x200" alt="">
+					<h2>title</h2>
+					<p>Lorem ipsum dolor, sit amet.</p>
+					<p>Lorem ipsum dolor sit amet.</p>
+				</article>
+				<article>
+					<img src="https://via.placeholder.com/300x200" alt="">
+					<h2>title</h2>
+					<p>Lorem, ipsum dolor sit amet.</p>
+					<p>Lorem ipsum dolor sit amet.</p>
+				</article>
+			</div>
+		</section>
+		<section>
+			<div id="main_contents">
+				<article>
+					<img src="https://via.placeholder.com/300x200" alt="">
+					<h2>title</h2>
+					<p>Lorem ipsum dolor sit, amet.</p>
+					<p>Lorem, ipsum dolor sit amet.</p>
+				</article>
+				<article>
+					<img src="https://via.placeholder.com/300x200" alt="">
+					<h2>title</h2>
+					<p>Lorem ipsum dolor sit amet.</p>
+					<p>Lorem ipsum dolor sit amet.</p>
+				</article>
+				<article>
+					<img src="https://via.placeholder.com/300x200" alt="">
+					<h2>title</h2>
+					<p>Lorem ipsum dolor sit amet.</p>
+					<p>Lorem ipsum dolor sit, amet.</p>
+				</article>
+				<article>
+					<img src="https://via.placeholder.com/300x200" alt="">
+					<h2>title</h2>
+					<p>Lorem ipsum dolor sit amet.</p>
+					<p>Lorem ipsum dolor, sit amet.</p>
+				</article>
+				<article>
+					<img src="https://via.placeholder.com/300x200" alt="">
+					<h2>title</h2>
+					<p>Lorem ipsum dolor, sit amet.</p>
+					<p>Lorem ipsum dolor sit amet.</p>
+				</article>
+				<article>
+					<img src="https://via.placeholder.com/300x200" alt="">
+					<h2>title</h2>
+					<p>Lorem, ipsum dolor sit amet.</p>
+					<p>Lorem ipsum dolor sit amet.</p>
+				</article>
+			</div>
+		</section>
+		<footer>
+			<p>ⓒcopyright by hana</p>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo sed distinctio voluptas exercitationem debitis consectetur necessitatibus omnis iure nemo rerum?</p>
+		</footer>
+	</div>
+</body>
+</html>

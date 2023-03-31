@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>04_sticky1</title>
+	<style>
+		*{margin: 0;
+		padding: 0;}
+
+		header{
+			width: 100%;
+			height: 100px;
+			background-color: beige;
+		}
+		#wrapper nav{
+			width: 100%;
+			overflow: hidden;
+			position: sticky;
+			position: -webkit-sticky;
+			position: -ms-sticky;
+			top: 0;
+		}
+		#wrapper nav li{
+			width: 20%;
+			height: 70px;
+			float: left;
+			text-align: center;
+			list-style: none;
+			line-height: 70px;
+			background-color: skyblue;
+		}
+
+		section p{
+			font-size: 2em;
+		}
+		section h1{
+			font-size: 3em;
+			padding-top: 70px;
+		}
+
+	</style>
+</head>
+<body>
+	<!-- div#wrapper>(header>h1{logo})+(nav>ul>li*5>a{menu$$})+(section>article*4>p{lorem100})+footer>p{lorem5} -->
+	<div id="wrapper">
+		<header>
+			<h1>logo</h1>
+		</header>
+		<nav>
+			<ul>
+				<li><a href="#menu1">menu01</a></li>
+				<li><a href="#menu2">menu02</a></li>
+				<li><a href="#menu3">menu03</a></li>
+				<li><a href="#menu4">menu04</a></li>
+				<li><a href="#menu5">menu05</a></li>
+			</ul>
+		</nav>
+		<section>
+			<article id="menu1">
+				<h1>sticky의 특징1</h1>
+				<p>position:static을 가지고 있다가 사용자가 스크롤을 이동하면서 원하는 위치 속성값에 다다르면 position:fixed로 바꾼다. <br>
+				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque veniam, voluptatem facere fugit culpa incidunt nobis quod commodi, ipsum porro, reiciendis! Cumque asperiores possimus rem similique iste molestiae unde hic! Natus, possimus! Tempore neque consequuntur enim, odit voluptas autem cumque voluptatibus omnis dignissimos obcaecati rerum debitis distinctio non, beatae commodi eveniet quaerat delectus earum aliquam, quos unde facere repudiandae quas porro. Eveniet veniam reiciendis earum eaque, ullam sapiente voluptates reprehenderit iusto. Recusandae nam maiores, velit quas sit unde rem, molestiae, aliquid incidunt quae, fuga? Dicta quasi id, culpa aut eligendi quis accusantium nostrum tempore officiis quod repellendus necessitatibus rem est.</p>
+			</article>
+			<article id="menu2">
+				<h1>sticky의 특징2</h1>
+				<p>sticky 속성값을 부여했을 때에는 top, left, right, bottom 속성명 중에서 하나 이상을 꼭 기술하여야 한다. <br>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut optio explicabo ipsa consequatur odit veritatis cumque possimus magni nihil ex, fugiat iste nisi, omnis maxime est unde numquam officiis tempore a! Architecto cumque molestias magni! Porro similique, explicabo aperiam placeat sunt ullam voluptates aspernatur, molestiae corrupti, veniam fugiat facere adipisci quis modi voluptatibus repudiandae odit nemo hic autem eligendi omnis tempora? Voluptates sequi magni molestias eum autem vitae praesentium alias. Vitae excepturi debitis error, explicabo facere fuga eligendi ab dolor nostrum, quas fugiat id aliquid cupiditate facilis. Aperiam, impedit? At deserunt corporis inventore delectus. Sed laborum quos placeat dignissimos cupiditate!</p>
+			</article>
+			<article id="menu3">
+				<h1>sticky의 특징3</h1>
+				<p>인터넷 익스플로러에서는 구현이 되지 않는다. <br>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat enim, dolorum perspiciatis hic adipisci vero quia animi debitis, provident ut reiciendis, minima qui commodi aut, porro. Repudiandae earum deserunt dolor repellendus distinctio, vitae sint. Eos porro quia accusantium, vitae eum suscipit cum repudiandae maxime assumenda voluptate culpa ex laborum est, unde ea aspernatur aliquid incidunt accusamus, vero aliquam libero. Rerum cumque, exercitationem! Magnam sunt tempora excepturi facilis culpa itaque qui modi necessitatibus maiores vel sint dignissimos nesciunt labore vitae eum consequatur cumque ut aliquid impedit, quidem obcaecati! Sint id amet, ipsam officia repellendus molestias libero sed, neque velit, hic dolor.</p>
+			</article>
+			<article id="menu4">
+				<h1>sticky의 특징4</h1>
+				<p>sticky 요소의 위치를 원하는 위치로 이동하려면 부모로 감싸고 부모요소를 이동시킨다. <br>
+				부모요소로 감쌀 때 부모요소를 벗어나면 다시 fixed가 풀린다. <br>
+				Lorem ipsum, dolor sit amet consectetur, adipisicing elit. Magnam expedita eius nisi architecto animi fugit distinctio eos, magni reiciendis ullam qui obcaecati quos veritatis accusantium laborum similique, voluptate maiores. Tenetur saepe neque modi, praesentium, cupiditate voluptatibus nemo ullam accusantium quod iste ab unde eum eius assumenda esse hic vitae doloremque autem ipsum nihil, cum. Natus optio, eos magnam vel unde distinctio fuga quibusdam ad ullam architecto incidunt consectetur reprehenderit, placeat nesciunt, nihil numquam quod, nemo velit et sequi quidem quisquam sed. Eos nesciunt suscipit fuga esse veniam ab nobis aut, quo delectus cumque! Nobis minus accusamus error obcaecati voluptatum consequatur!</p>
+			</article>
+			<article id="menu5">
+				<h1>sticky의 특징5</h1>
+				<p>sticky를 감싸는 부모가 overflow:hidden을 가지고 있으면 fixed는 동작하지 않는다! <br>
+				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid, saepe laboriosam corporis atque? Labore neque odit repellendus aperiam totam sapiente pariatur beatae in amet dicta rem ex nulla quam animi velit, possimus sit temporibus dolor doloremque a vel sunt ea. Ut nobis similique in soluta dolorum, eos doloribus et nesciunt modi fuga, voluptas, reprehenderit. In mollitia nobis recusandae accusamus, fugiat quisquam unde quis totam repudiandae obcaecati veniam doloribus blanditiis similique voluptates quod qui nam nulla nisi doloremque aperiam nesciunt eaque explicabo est, repellendus! Quod adipisci asperiores dolor doloribus cumque, et dolores molestiae, omnis deserunt veritatis. Eligendi, corporis ratione perspiciatis et.</p>
+			</article>
+		</section>
+		<footer>
+			<p>Lorem ipsum dolor sit amet.</p>
+		</footer>
+	</div>
+</body>
+</html>

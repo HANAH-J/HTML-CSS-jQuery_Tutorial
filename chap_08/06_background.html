@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>06_background</title>
+	<style>
+		{margin: 0;
+		padding: 0;}
+		#wrapper .box{
+			border: 1px solid red;
+			width: 600px;
+			height: 500px;
+		}
+		.box:nth-child(1){
+			background-image: url(img/01.jpg);
+			background-repeat: no-repeat;
+			background-size: 280px 158px;
+			background-position: center;
+		}
+		.box:nth-child(2){
+			background-image: url(img/02.gif);
+			background-repeat: no-repeat;
+			background-size: 280px 158px;
+			background-position: 100px bottom;
+		}
+		.box:nth-child(3){
+			background-image: url(img/03.gif);
+			background-repeat: no-repeat;
+			background-size: 280px 158px;
+			background-position: 10% 30%;
+		}
+		.box:nth-child(4){
+			background-image: url(img/background.jpg);
+			background-repeat: no-repeat;
+			background-size: contain;
+		}
+		.box:nth-child(5){
+			background: url(img/delivery.png) no-repeat 10% 10%/68px 58px;
+		}
+	</style>
+</head>
+<body>
+	<h1>background-size 속성값은 px, %, contain, cover의 속성값을 사용할 수 있다!</h1>
+	<h1>background-position 속성값은 px, %, left, right, top, bottom, center의 속성값을 사용할 수 있다!</h1>
+	<h1>background: 속성명으로 속기법으로 나타낼 때에는 이미지 경로와 이미지명, repeat 속성, background-position / background-size 순서로 표현한다.</h1>
+	<div id="wrapper">
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+	</div>
+</body>
+</html>

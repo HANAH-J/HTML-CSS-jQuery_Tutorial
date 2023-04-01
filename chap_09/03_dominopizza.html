@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>03_dominopizza</title>
+	<style>
+		*{margin: 0;
+		padding: 0;}
+		html, body{
+			width: 100%;
+			height: 100%;
+			/*border: 3px solid blue;*/
+			background-color: #BBD357;
+		}
+		#wrapper{
+			width: 400%;
+			height: 100%;
+			/*border: 1px solid green;*/
+			background: url(img/pizza_bg.jpg);
+			overflow: hidden;
+		}
+		#wrapper>section{
+			/*border: 1px solid red;*/
+			width: 25%;
+			height: 100%;
+			float: left;
+			position: relative;
+			box-sizing: border-box;
+		}
+		#wrapper>section> .main, #wrapper>section .cha1, #wrapper>section .cha2{
+			position: absolute;
+			left: 50%;
+			/*border: 1px solid blue;*/
+			box-sizing: border-box;
+		}
+		#wrapper>section:nth-child(1) .main{
+			width: 980px;
+			height: 880px;
+			background: url(img/01village.png);
+			margin-left: -490px;
+		}
+		#wrapper>section:nth-child(2) .main{
+			width: 951px;
+			height: 809px;
+			background: url(img/02factory.png);
+			margin-left: -475.5px;
+		}
+		#wrapper>section:nth-child(2) .cha1{
+			width: 238px;
+			height: 338px;
+			background: url(img/character01.png);
+			bottom: 100px;
+			margin-left: 460px;
+			z-index: 2;
+		}
+		#wrapper>section:nth-child(2) .cha2{
+			width: 234px;
+			height: 280px;
+			background: url(img/character02.png);
+			bottom: 100px;
+			margin-left: -590px;
+			z-index: 2;
+		}
+		#wrapper>section:nth-child(3) .main{
+			width: 968px;
+			height: 756px;
+			background: url(img/03shop.png);
+			margin-left: -484px;
+			bottom: 50px;
+		}
+		#wrapper>section:nth-child(4) .main{
+			width: 1202px;
+			height: 780px;
+			background: url(img/04market.png);
+			margin-left: -601px;
+		}
+
+		/*도로 스타일*/
+		.street{
+			width: 400%;
+			height: 42px;
+			background: url(img/street.png);
+			position: absolute;
+			bottom: 0;
+			left: 0;
+		}
+		/*오토바이 캐릭터*/
+		#wrapper .bike{
+			width: 101px;
+			height: 87px;
+			background: url(img/bikeman.png);
+			position: fixed;
+			bottom: 5px;
+			left: 50px;
+			z-index: 10;
+		}
+	</style>
+</head>
+<body>
+	<!-- #wrapper>section{section$}*4 -->
+	<div id="wrapper">
+		<section>
+			<div class="main"></div>
+		</section>
+		<section>
+			<div class="main"></div>
+			<div class="cha1"></div>
+			<div class="cha2"></div>
+		</section>
+		<section>
+			<div class="main"></div>
+		</section>
+		<section>
+			<div class="main"></div>
+		</section>
+		
+		<div class="bike"></div>
+	</div>
+	<div class="street"></div>
+</body>
+</html>

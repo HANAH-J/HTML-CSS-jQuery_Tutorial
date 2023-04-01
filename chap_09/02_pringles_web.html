@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>02_pringles_web</title>
+	<style type="text/css">
+		*{margin: 0;
+		padding: 0;}
+		html,body{
+			width: 100%;
+			height: 100%;
+			background: url(img/bg/gradient_bg.jpg);
+			background-size: 500%;
+		}
+		#wrapper{
+			width: 500%;
+			height: 100%;
+			background: url(img/bg/bg.png) no-repeat left top;
+			position: absolute;
+			background-size: 100%;
+		}
+		#wrapper>section{
+			width: 20%;
+			height: 100%;
+			float: left;
+			box-sizing: border-box;
+			position: relative;
+			/*border: 3px solid blue;*/
+		}
+		.bo{
+			border: 1px solid blue;
+		}
+		/*상단의 네비 #gng_top style*/
+		#gnb_top{
+			width: 972px;
+			height: 179px;
+			background: url(img/nav/lnb_bg.png);
+			/*position: absolute;*/
+			position: fixed;
+			left: 50%;
+			/*margin-left: -486px;*/
+			margin-left: -405px;
+			top: 62px;
+			z-index: 9999;
+		}
+		#gnb_top ul{
+			width: 100%;
+			height: 100px;
+			/*border-color: red;*/
+			position: absolute;
+			left: -116px;
+			top: -62px;
+		}
+		#gnb_top ul li{
+			/*border: 3px solid purple;*/
+			float: left;
+			position: relative;
+			top: 125px;
+			list-style: none;
+		}
+		#gnb_top ul li:nth-child(1){
+			width: 163px;
+			height: 258px;
+			background: url(img/nav/lnb_01home.png);
+			top: 0;
+		}
+		#gnb_top ul li:nth-child(2){
+			width: 191px;
+			height: 53px;
+			background: url(img/nav/lnb_02pringles.PNG);
+			left: 25px;
+		}
+		#gnb_top ul li:nth-child(3){
+			width: 165px;
+			height: 39px;
+			background: url(img/nav/lnb_03product.png);
+			left: 50px;
+		}
+		#gnb_top ul li:nth-child(4){
+			width: 130px;
+			height: 46px;
+			background: url(img/nav/lnb_04media.png);
+			left: 75px;
+		}
+		#gnb_top ul li:nth-child(5){
+			width: 130px;
+			height: 45px;
+			background: url(img/nav/lnb_05event.png);
+			left: 100px;
+		}
+		#gnb_top a{
+			display: block;
+			width: 100%;
+			height: 100%;
+			text-indent: -9999px;
+		}
+
+		/*상단 네비 #gnb_top의 메뉴 활성화 style*/
+		#gnb_top ul li:nth-child(2):hover{
+			background: url(img/nav/lnb_02pringles_on.png);
+		}
+		#gnb_top ul li:nth-child(3):hover{
+			background: url(img/nav/lnb_03product_on.png);
+		}
+		#gnb_top ul li:nth-child(4):hover{
+			background: url(img/nav/lnb_04media_on.png);
+		}
+		#gnb_top ul li:nth-child(5):hover{
+			background: url(img/nav/lnb_05event_on.png);
+		}
+
+		/*하단의 네비 #gnb_bottom style*/
+		nav#gnb_bottom{
+			width: 790px;
+			height: 98px;
+			/*position: absolute;*/
+			position: fixed;
+			bottom: 30px;
+			left: 50%;
+			margin-left: -385px;
+			z-index: 9999;
+		}
+		nav#gnb_bottom ul{
+			width: 100%;
+			height: 100%;
+			border: 1px solid red;
+			background: url(img/nav/snb_bg.png);
+			overflow: hidden;
+		}
+		nav#gnb_bottom ul li{
+			list-style: none;
+			width: 158px;
+			height: 100%;
+			border: 1px solid yellow;
+			float: left;
+			box-sizing: border-box;
+			position: relative;
+		}
+		nav#gnb_bottom ul li>a{
+			width: 54px;
+			height: 42px;
+			border: 1px solid purple;
+			display: block;
+			position: absolute;
+			left: 50%;
+			margin-left: -27px;
+			top: 15px;
+			text-indent: -9999px;
+		}
+		nav#gnb_bottom ul li:nth-child(1)>a{
+			background: url(img/nav/snb_01home.png);
+			margin-left: -25px;
+		}
+		nav#gnb_bottom ul li:nth-child(2)>a{
+			background: url(img/nav/snb_02pringles.png);
+			margin-left: -37px;
+		}
+		nav#gnb_bottom ul li:nth-child(3)>a{
+			background: url(img/nav/snb_03product.png);
+			margin-left: -35px;
+		}
+		nav#gnb_bottom ul li:nth-child(4)>a{
+			background: url(img/nav/snb_04media.png);
+			margin-left: -30px;
+		}
+		nav#gnb_bottom ul li:nth-child(5)>a{
+			background: url(img/nav/snb_05event.png);
+		}
+
+		/*하단 네비 #gnb_bottom의 li 호버시 cart style*/
+		#gnb_bottom div.cart{
+			/*width: 109px;*/
+			width: 80px;
+			height: 60px;
+			background: url(img/nav/snb_car.png) no-repeat;
+			background-size: contain;
+			border: 3px solid blue;
+			position: absolute;
+			bottom: -25px;
+			left: 40px;
+		}
+		nav#gnb_bottom ul li:nth-child(1):hover~div.cart{
+			left: 40px;
+		}
+		nav#gnb_bottom ul li:nth-child(2):hover~div.cart{
+			left: 185px;
+		}
+		nav#gnb_bottom ul li:nth-child(3):hover~div.cart{
+			left: 350px;
+		}
+		nav#gnb_bottom ul li:nth-child(4):hover~div.cart{
+			left: 510px;
+		}
+		nav#gnb_bottom ul li:nth-child(5):hover~div.cart{
+			left: 670px;
+		}
+
+		/*첫 번째 section의 메인 컨텐츠 style*/
+		#wrapper>section .main{
+			border: 3px solid purple;
+			position: absolute;
+			left: 50%;
+		}
+		#wrapper>section:nth-child(1) .main{
+			width: 708px;
+			height: 626px;
+			margin-left: -354px;
+			bottom: 150px;
+			background: url(img/home_bg02.png);
+		}
+		#wrapper>section .cha{
+			position: absolute;
+			left: 50%;
+			border: 3px solid green;
+		}
+		#wrapper>section:nth-child(1) .cha1{
+			width: 246px;
+			height: 308px;
+			background: url(img/event_ch01.png);
+			bottom: 130px;
+			/*left: 320px;*/
+			margin-left: -550px;
+		}#wrapper>section:nth-child(1) .cha2{
+			width: 239px;
+			height: 281px;
+			background: url(img/event_ch02.png);
+			bottom: 130px;
+			margin-left: 350px;
+		}
+
+		/*두 번째 section의 main contents style*/
+		#wrapper>section:nth-child(2) .main{
+			/*width: 980px;*/
+			width: 800px;
+			/*height: 880px;*/
+			height: 700px;
+			background: url(img/01village.png);
+			background-size: contain;
+			margin-left: -400px;
+			top: 0;
+		}
+	</style>
+</head>
+<body>
+	<!-- #wrapper>section{section$}*5 -->
+	<div id="wrapper">
+		<section id="home">
+			<!-- nav#gnb_top>ul>li*5>a{menu$} -->
+			<nav id="gnb_top" class="bo">
+				<ul class="bo">
+					<li><a href="#home">home</a></li>
+					<li><a href="#pringles">pringles소개</a></li>
+					<li><a href="#product">product</a></li>
+					<li><a href="#media">media</a></li>
+					<li><a href="#event">event</a></li>
+				</ul>
+			</nav>
+			<!-- nav#gnb_bottom>ul>li*5>a{menu$} -->
+			<nav id="gnb_bottom" class="bo">
+				<ul>
+					<li><a href="#home">home</a></li>
+					<li><a href="#pringles">pringles</a></li>
+					<li><a href="#product">product</a></li>
+					<li><a href="#media">media</a></li>
+					<li><a href="#event">event</a></li>
+					<div class="cart"></div>
+				</ul>
+			</nav>
+			<div class="main">
+			</div>
+			<div class="cha cha1"></div>
+			<div class="cha cha2"></div>
+		</section>
+		<section id="pringles">
+			<div class="main">
+			</div>
+		</section>
+		<section id="product">
+			<div class="main"></div>
+		</section>
+		<section id="media">
+			<div class="main"></div>
+		</section>
+		<section id="event">
+			<div class="main"></div>
+		</section>
+	</div>
+</body>
+</html>

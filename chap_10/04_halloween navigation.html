@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>04_halloween navigation</title>
+	<style>
+		*{margin: 0;
+		padding: 0;}
+		html, body{
+			width: 100%;
+			height: 100%;
+		}
+		#wrapper{
+			width: 500%;
+			height: 100%;
+			overflow: hidden;
+		}
+		#wrapper>section{
+			width: 20%;
+			height: 100%;
+			float: left;
+			position: relative;
+		}
+		#wrapper>section:nth-child(1){
+			background-color: #69CC6D;
+		}
+		#wrapper>section:nth-child(2){
+			background-color: #F4D245;
+		}
+		#wrapper>section:nth-child(3){
+			background-color: #080808;
+		}
+		#wrapper>section:nth-child(4){
+			background-color: #AA54B7;
+		}
+		#wrapper>section:nth-child(5){
+			background-color: #6991CC;
+		}
+
+		/*navi style*/
+		#wrapper>section:nth-child(1) nav#gnb{
+			width: 750px;
+			height: 120px;
+			position: fixed;
+			bottom: 10px;
+			border: 1px solid red;
+			left: 50%;
+			margin-left: -375px;
+			overflow: hidden;
+			z-index: 9999;
+		}
+		nav#gnb li{
+			list-style: none;
+			border: 1px solid red;
+			width: 150px;
+			height: 120px;
+			float: left;
+			box-sizing: border-box;
+		}
+		nav#gnb li:nth-child(1){
+			background: url(img/nav1.png) ;
+			background-size: 100%;
+		}
+		nav#gnb li:nth-child(2){
+			background: url(img/nav2.png);
+			background-size: 100%;
+		}
+		nav#gnb li:nth-child(3){
+			background: url(img/nav3.png);
+			background-size: 100%;
+		}
+		nav#gnb li:nth-child(4){
+			background: url(img/nav4.png);
+			background-size: 100%;
+		}
+		nav#gnb li:nth-child(5){
+			background: url(img/nav5.png);
+			background-size: 100%;
+		}
+
+		/*hover시*/
+		nav#gnb li:nth-child(1):hover, nav#gnb li:nth-child(1).active{
+			background: url(img/navon1.png) ;
+			background-size: 100%;
+		}
+		nav#gnb li:nth-child(2):hover, nav#gnb li:nth-child(2).active{
+			background: url(img/navon2.png);
+			background-size: 100%;
+		}
+		nav#gnb li:nth-child(3):hover, nav#gnb li:nth-child(3).active{
+			background: url(img/navon3.png);
+			background-size: 100%;
+		}
+		nav#gnb li:nth-child(4):hover, nav#gnb li:nth-child(4).active{
+			background: url(img/navon4.png);
+			background-size: 100%;
+		}
+		nav#gnb li:nth-child(5):hover, nav#gnb li:nth-child(5).active{
+			background: url(img/navon5.png);
+			background-size: 100%;
+		}
+
+		nav#gnb li a{
+			width: 100%;
+			height: 100%;
+			display: block;
+			text-indent: -9999px;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+		<section id="intro">
+			<nav id="gnb">
+				<ul>
+					<li><a href="#intro">menu1</a></li>
+					<li><a href="#home">menu2</a></li>
+					<li><a href="#event">menu3</a></li>
+					<li><a href="#product">menu4</a></li>
+					<li><a href="#limited">menu5</a></li>
+				</ul>
+			</nav>
+		</section>
+		<section id="home"></section>
+		<section id="event"></section>
+		<section id="product"></section>
+		<section id="limited"></section>
+	</div>
+</body>
+</html>

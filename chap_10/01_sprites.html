@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>01_sprites</title>
+	<style>
+		*{margin: 0;
+		padding: 0;}
+		div{
+			border: 1px solid red;
+		}
+		html,body{
+			height: 5000px;
+		}
+		#wrapper{
+			width: 134px;
+			height: 44px;
+			background: url(images/img_navsprites.gif);
+		}
+		#wrapper .home{
+			width: 46px;
+			height: 44px;
+			position: absolute;
+			left: 30%;
+			background: url(images/img_navsprites.gif) no-repeat;
+			background-position: -91px 0px;
+		}
+		#wrapper .monster{
+			width: 62px;
+			height: 99px;
+			background: url(images/all.png) -937px 0;
+			position: fixed;
+			top: 100px;
+		}
+		.contents{
+			width: 960px;
+			height: 379px;
+			position: absolute;
+			left: 50%;
+			margin: -479.5px;
+			top: 700px;
+			border-color: blue;
+		}
+		.contents .menu{
+			float: left;
+			box-sizing: border-box;
+		}
+		.contents .menu:nth-child(1){
+			width: 323px;
+			height: 190px;
+			background: url(images/menu.png);
+		}
+		.contents .menu:nth-child(1):hover{
+			background: url(images/menu.png) 0 -190px;
+		}
+		.contents .menu:nth-child(2){
+			width: 320px;
+			height: 190px;
+			background: url(images/menu.png) -323px 0;
+		}
+		.contents .menu:nth-child(2):hover{
+			background: url(images/menu.png) -323px -190px;
+		}
+		.contents .menu:nth-child(3){
+			width: 317px;
+			height: 190px;
+			background: url(images/menu.png) -643px 0;
+		}
+		.contents .menu:nth-child(3):hover{
+			background: url(images/menu.png) -643px -190px;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+		<div class="home"></div>
+		<div class="right"></div>
+		<div class="monster"></div>
+	</div>
+	<h1>메뉴에 마우스를 올려주세요.</h1>
+	<div class="contents">
+		<div class="menu"></div>
+		<div class="menu"></div>
+		<div class="menu"></div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>02_animation sprites</title>
+	<style>
+		*{margin: 0;
+		padding: 0;}
+		.frame{
+			border: 1px solid red;
+			width: 99.8px;
+			height: 203px;
+			position: absolute;
+			left: 30%;
+			top: 100px;
+			overflow: hidden;
+		}
+		.frame>.film{
+			border: 1px solid blue;
+			width: 499px;
+			height: 203px;
+			background: url(images/film.PNG);
+			animation: movie 0.5s steps(5) infinite;
+		}
+		@keyframes movie{
+			from{background-position: 0}
+			to{background-position: -499px}
+		}
+		/*포테이토맨 애니메이션*/
+		.potato{
+			border: 1px solid red;
+			width: 100px;
+			height: 215px;
+			background: url(images/potato1.png);
+			animation: potato 1s steps(3) infinite;
+		}
+		@keyframes potato{
+			0%{background-position: 0}
+			100%{background-position: -300px}
+		}
+
+		.potato2{
+			border: 1px solid blue;
+			width: 100px;
+			height: 173px;
+			background: url(images/potato2.png);
+			animation: potato2 1s steps(5) infinite;
+		}
+		@keyframes potato2{
+			0%{background-position: 0}
+			100%{background-position: -500px}
+		}
+		.doves{
+			border: 1px solid pink;
+			width: 79px;
+			height: 38px;
+			background: url(images/doves_eating.png);
+			animation: doves 1s steps(19) infinite;
+		}
+		@keyframes doves{
+			from{background-position: 0}
+			to{background-position: -1501px}
+		}
+	</style>
+</head>
+<body>
+	<div class="frame">
+		<div class="film"></div>
+	</div>
+	<div class="potato"></div>
+	<div class="potato2"></div>
+	<div class="doves"></div>
+</body>
+</html>

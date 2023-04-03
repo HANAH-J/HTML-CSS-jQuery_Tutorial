@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>05_animation fillmode</title>
+  <style>
+    div{
+      width: 100px;
+      height: 100px;
+      background-color: yellow;
+      position: relative;
+      left: 50px;
+      margin: 5px;
+      animation: ani 1s 2;
+      /*animation-delay: 1s;*/
+    }
+    @keyframes ani{
+      from{left: 200px; background-color: skyblue;}
+      to{left: 600px; background-color: pink}
+    }
+    /*animation-fill-mode를 다르게 설정*/
+    .ani1{
+      animation-fill-mode: none;
+    }
+    .ani2{
+      animation-fill-mode: forwards;
+    }
+    .ani3{
+      animation-fill-mode: backwards;
+    }
+    .ani4{
+      animation-fill-mode: both;
+    }
+  </style>
+</head>
+<body>
+    <div class="ani1">none(default)</div>
+    <div class="ani2">forwards</div>
+    <div class="ani3">backwards</div>
+    <div class="ani4">both</div>
+    <h1>animation-fill-mode의 종류는 4가지이다.
+    기본값은 none이고 forward, backwards, both가 있다. animation-delay가 없을 때에는 forwards와 backwards는 끝날 때 100%에서 멈춘다는 차이가 있고, animation-delay 속성이 있을 때에는 backwards, both는 대기시간 전부터 0% 스타일을 준비하고 있다가 play가 된다.</h1>
+</body>
+</html>

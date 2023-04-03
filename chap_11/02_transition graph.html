@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>02_transition graph</title>
+  <style>
+    .bo{
+      border: 1px solid red;
+    }
+    .wrap{
+      width: 100%;
+      height: 900px;
+    }
+    .wrap ul{
+      width: 95%;
+      height: 50%;
+    }
+    .wrap ul li{
+      list-style: none;
+      width: 15%;
+      background-color: #65B9EF;
+      height: 50px;
+      float: left;
+      margin: 2px;
+      transition: 2s; /*transition-duration: 시간;*/
+      transition-delay: 1s;
+    }
+    .wrap ul:hover li{
+      height: 400px; /*transition-property: 속성;*/
+    }
+    /*transition-timing-function의 다양성*/
+    .wrap ul:hover li:nth-child(1){
+      transition-timing-function: linear; /*등속도*/
+    }
+    .wrap ul:hover li:nth-child(2){
+      transition-timing-function: ease-in; /*점점 빨라짐*/
+    }
+    .wrap ul:hover li:nth-child(3){
+      transition-timing-function: ease-out; /*점점 느려짐*/
+    }
+    .wrap ul:hover li:nth-child(4){
+      transition-timing-function: ease-in-out; /*느렸다가 빨랐다가 다시 느려짐*/
+    }
+    .wrap ul:hover li:nth-child(5){
+      transition-timing-function: ease; /*디폴트 값으로 빨랐다가 느려짐*/
+    }
+    .wrap ul:hover li:nth-child(6){
+      transition-timing-function: cubic-bezier(1,0,0,1); /*디폴트 값으로 빨랐다가 느려짐*/
+    }
+  </style>
+</head>
+<body>
+  <h1>transition: 성시속대(성시경도 속대)</h1>
+  <div class="wrap bo">
+    <ul class="bo">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+</body>
+</html>

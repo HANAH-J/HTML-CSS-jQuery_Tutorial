@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>02_3D transform</title>
+	<style>
+		*{margin: 0;
+		padding: 0;}
+		body{
+			height: 8000px;
+		}
+		.rotate, .translate{
+			border: 1px solid red;
+			overflow: hidden;
+		}
+		.rotate .box{
+			width: 200px;
+			height: 200px;
+			border: 3px solid blue;
+			float: left;
+			margin: 100px 50px;
+			perspective: 100px;
+		}
+		.rotate .box p{
+			width: 100%;
+			height: 100%;
+			background-color: skyblue;
+			opacity: 0.5;
+			transform: rotateX(45deg);
+		}
+		.rotate .box:nth-of-type(1){
+			perspective: 100px;
+		}
+		.rotate .box:nth-of-type(2){
+			perspective: 200px;
+		}
+		.rotate .box:nth-of-type(3){
+			perspective: 300px;
+		}
+
+		.translate h2{
+			border: 3px solid purple;
+			width: 300px;
+			height: 150px;
+			position: absolute;
+			top: 1000px;
+			left: 50%;
+			margin-left: -150px;
+			perspective: 100px;
+		}
+		.translate h2 p{
+			width: 100%;
+			height: 100%;
+			background-color: orange;
+			position: absolute;
+			opacity: 0.5;
+		}
+		.translate h2 p:nth-of-type(1){
+			transform: translateZ(-50px);
+		}
+		.translate h2 p:nth-of-type(2){
+			transform: translateZ(0px);
+		}
+		.translate h2 p:nth-of-type(3){
+			transform: translateZ(80px);
+		}
+
+		.scale{
+			border: 1px solid green;
+			position: absolute;
+			top: 2500px;
+			left: 30%;
+		}
+		.scale h3{
+			width: 300px;
+			height: 150px;
+			border: 3px solid gray;
+			position: relative;
+			margin-top: 100px;
+		}
+		.scale h3 p{
+			width: 100%;
+			height: 100%;
+			background-color: pink;
+		}
+		.scale h3:nth-child(1) p{
+			transform: perspective(100px) scaleZ(0.5) rotateX(45deg);
+		}
+		.scale h3:nth-child(2) p{
+			transform: perspective(500px) scaleZ(2) rotateX(45deg);
+		}
+		.scale h3:nth-child(3) p{
+			transform: perspective(500px) scaleZ(3) rotateY(45deg);
+		}
+		.scale h3:nth-child(4) p{
+			transform: perspective(500px) scaleZ(5) rotateZ(45deg);
+		}
+		.scale h3:nth-child(5) p{
+			transform: perspective(500px) scaleZ(7) rotateX(45deg);
+		}
+	</style>
+</head>
+<body>
+	<div class="rotate">
+		<h1>rotate: 오브젝트를 왜곡할 때 부모요소에 perspective 속성을 활용하면 원근법에 의한 거리를 조절할 수 있고, 0 이상이면서 수치가 작을수록 더 가까이 있기 때문에 왜곡의 정도가 더 심해 보인다!</h1>
+		<div class="box">
+			<p>rotate1</p>
+		</div>
+		<div class="box">
+			<p>rotate2</p>
+		</div>
+		<div class="box">
+			<p>rotate3</p>
+		</div>
+	</div>
+
+	<div class="translate">
+		<h1>translate: 구조를 만들 때 이동하고 싶은 부모요소를 만들고 부모요소에 perspective를 설정한다. 이동하고 싶은 자식요소의 수치를 변경하면 되는데 수치가 0이면 부모위치에 같이 있고 수치가 -(음수)이면 부모기준으로 뒤로 멀어지고 +(양수)로 커질수록 부모기준으로 앞으로 튀어나오면서 점점 멀어진다. 수치를 너무 많이 주면 화면 밖으로 튀어나와서 보이지 않는다.</h1>
+		<h2>
+			<p>traslate1</p>
+			<p>traslate2</p>
+			<p>traslate3</p>
+		</h2>
+	</div>
+
+	<div class="scale">
+		<h3>
+			<p>scale1</p>
+		</h3>
+		<h3>
+			<p>scale2</p>
+		</h3>
+		<h3>
+			<p>scale3</p>
+		</h3>
+		<h3>
+			<p>scale4</p>
+		</h3>
+		<h3>
+			<p>scale5</p>
+		</h3>
+	</div>
+</body>
+</html>

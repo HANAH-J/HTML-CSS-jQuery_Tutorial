@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>03_transform selfEX</title>
+	<style>
+		*{margin: 0;
+		padding: 0;}
+		.bo{
+			border:1px solid purple;
+		}
+		#wrapper{
+			width: 200%;
+			height: 950px;
+			border:1px solid red;
+		}
+		#wrapper>section{
+			width: 50%;
+			height:100%;
+			border:1px solid blue;
+			float: left;
+			box-sizing: border-box;
+		}
+		/*board판*/
+		#wrapper>section:nth-child(1) .board{
+			width: 717px;
+			height: 419px;
+			background: url(img/home/board.png);
+			position: absolute;
+			bottom:0;
+			left:50%;
+			margin-left: -358.5px;
+		}
+		#wrapper>section:nth-child(1) .plane{
+			width: 664px;
+			height: 228px;
+			background: url(img/index_air.png);
+			position: absolute;
+			top:0;
+			left:50%;
+			animation: airfly 3s infinite;
+		}
+		@keyframes airfly{
+			0%{left: 100%; transform: rotateY(0deg); opacity: 1}
+			49.99999%{left: -70%; transform: rotateY(0deg); opacity: 1}
+			50%{transform: rotateY(180deg); opacity: 0}
+			50.00001%{opacity: 1}
+			99.99999%{left: 100%; transform: rotateY(180deg); opacity: 1}
+			100%{opacity: 0}
+		}
+		
+		/*새 스타일*/
+		.bird{
+			width: 171px;
+			height: 169px;
+			background: url(img/home/bird_change.png);
+			position: absolute;
+			animation: birdfly 2s steps(11) 1;
+			animation-fill-mode: forwards;
+		}
+		@keyframes birdfly{
+			0%{bottom: 700px; right: 0;
+				background-position: -171px}
+			100%{bottom: 400px; right: 500px;
+				background-position: -2052px}
+		}
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+		<section>
+			<div class="board bo"></div>
+			<div class="plane bo"></div>
+			<div class="bird bo"></div>
+		</section>
+		<section></section>
+	</div>
+</body>
+</html>

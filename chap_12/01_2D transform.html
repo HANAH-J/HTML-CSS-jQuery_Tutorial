@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01_2D transform</title>
+  <style>
+    *{margin: 0;
+    padding: 0;}
+    section{
+      width: 100%;
+      background-color: #77CE75;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+    nav{
+      width: 100%;
+      height: 70px;
+      background-color: #EDB765;
+    }
+    nav ul{
+      width: 100%;
+      height: 100%;
+      background-color: #58BDD8;
+      transform: skewX(-45deg);
+    }
+    nav ul li{
+      width: 20%;
+      height: 100%;
+      float: left;
+      list-style: none;
+      background-color: #EDB765;
+    }
+    nav ul li a{
+      text-align: center;
+      display: block;
+      width: 100%;
+      height: 100%;
+      color: white;
+      line-height: 70px;
+      font-weight: bold;
+      text-decoration: none;
+      transform: skewX(45deg);
+      transition: 1s;
+    }
+    nav ul li:hover a{
+      color: black;
+      transform: scale(1.5) skewX(45deg);
+    }
+  </style>
+</head>
+<body>
+    <section>
+      <nav>
+        <ul>
+          <li><a href="#">menu1</a></li>
+          <li><a href="#">menu2</a></li>
+          <li><a href="#">menu3</a></li>
+          <li><a href="#">menu4</a></li>
+          <li><a href="#">menu5</a></li>
+        </ul>
+      </nav>
+    </section>
+</body>
+</html>

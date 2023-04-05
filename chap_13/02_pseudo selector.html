@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>02_pseudo selector</title>
+	<style>
+		ol li{
+			list-style: none;
+			float: left;
+			margin: 10px;
+		}
+		ol li::after{
+			content: "|";
+			margin-left: 10px;
+			color: red;
+			width: 3px;
+			height: 5px;
+			background-color: red;
+		}
+		ol li:last-child::after{
+			content: none;
+		}
+		p:nth-of-type(2){
+			clear: both;
+		}
+		p::before{
+			content: url(https://s.pstatic.net/static/www/mobile/edit/20220304/mobile_103403206174.gif);
+		}
+
+		ul.gallery{
+			width: 100%;
+			border: 1px solid gray;
+		}
+		ul.gallery li{
+			width: 390px;
+			height: 390px;
+			float: left;
+			margin: 5px;
+			border: 1px solid red;
+			box-sizing: border-box;
+			list-style: none;
+			transition: background-size 1s;
+		}
+		ul.gallery li:nth-child(1){
+			background: url(img/product_01.jpg) center;
+			background-size: 100%;
+		}
+		ul.gallery li:nth-child(2){
+			background: url(img/product_02.jpg) center;
+			background-size: 100%;
+		}
+		ul.gallery li:nth-child(3){
+			background: url(img/product_03.jpg) center;
+			background-size: 100%;
+		}
+		ul.gallery li:nth-child(4){
+			background: url(img/product_04.jpg) center;
+			background-size: 100%;
+		}
+		ul.gallery li:nth-child(5){
+			background: url(img/product_05.jpg) center;
+			background-size: 100%;
+		}
+		ul.gallery li:nth-child(6){
+			background: url(img/product_06.jpg) center;
+			background-size: 100%;
+		}
+
+		ul.gallery li::after{
+			content: attr(data-text);
+			background-color: hotpink;
+			width: 100%;
+			height: 100%;
+			display: block;
+			opacity: 0;
+			text-align: center;
+			line-height: 390px;
+		}
+		ul.gallery li:hover::after{
+			opacity: 0.5;
+			color: white;
+			cursor: pointer;
+		}
+		ul.gallery li:hover{
+			background-size: 110%;
+		}
+	</style>
+</head>
+<body>
+	<p>Lorem ipsum dolor sit, amet.</p>
+	<ol>
+		<li>menu1</li>
+		<li>menu2</li>
+		<li>menu3</li>
+		<li>menu4</li>
+		<li>menu5</li>
+	</ol>
+	<p>Lorem ipsum dolor sit amet.</p>
+	<ul class="gallery">
+		<li data-text="1Lorem ipsum dolor sit amet."></li>
+		<li data-text="2Lorem ipsum dolor sit amet."></li>
+		<li data-text="3Lorem ipsum dolor sit amet."></li>
+		<li data-text="4Lorem ipsum dolor sit amet."></li>
+		<li data-text="5Lorem ipsum dolor sit amet."></li>
+		<li data-text="6Lorem ipsum dolor sit amet."></li>
+	</ul>
+</body>
+</html>

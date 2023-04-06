@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>01_web publishing</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+	<link rel="icon" href="img/m_h1_logo.png">
+	<style>
+		*{margin: 0;
+		padding: 0;}
+		body{
+			width: 100%;
+			overflow-x: hidden;
+		}
+		#wrapper{
+			font-family: 'Noto Sans KR', sans-serif;
+			width: 100%;
+		}
+		ul li, ol li{
+			list-style: none;
+		}
+		/*p, section, div, li, span{
+			border: 1px solid red;
+		}*/
+		a{
+			text-decoration: none;
+		}
+
+
+
+		/*로그인*/
+		#wrapper>p#login{
+			width: 60%;
+			position: absolute;
+			top: 5px;
+			left: 20%;
+		}
+		#wrapper>p#login span{
+			float: right;
+		}
+		#wrapper>p#login span a{
+			color: white;
+		}
+		#wrapper>p#login span:first-child a{
+			width: 28px;
+			height: 28px;
+			display: block;
+			float: left;
+			margin-right: 5px;
+		}
+		#wrapper>p#login span:first-child a:nth-child(1){
+			background: url(img/icon_sns_01.png) no-repeat -56px 0;
+		}
+		#wrapper>p#login span:first-child a:nth-child(2){
+			background: url(img/icon_sns_01.png) no-repeat -84px 0;
+		}
+		#wrapper>p#login span:nth-child(2)::before, #wrapper>p#login span:nth-child(2)::after{
+			content:"|";
+			margin: 10px;
+			color: white;
+		}
+
+
+
+		/*.desktopGnb1 네비*/
+		nav.desktopGnb1{
+			background-color: white;
+			width: 60%;
+			height: 100px;
+			position: absolute;
+			top: 40px;
+			z-index: 9999;
+			left: 20%;
+			padding: 0 20px;
+		}
+		nav.desktopGnb1 li{
+			float: left;
+			width: 13%;
+			height: 100px;
+			box-sizing: border-box;
+			line-height: 100px;
+			text-align: center;
+		}
+		nav.desktopGnb1 li a{
+			display: block;
+			width: 100%;
+			height: 100%;
+			font-weight: bold;
+			color: black;
+			font-size: 14px;
+			text-transform: uppercase;
+		}
+		nav.desktopGnb1 li:hover a{
+			color: #F6CA00;
+		}
+		nav.desktopGnb1 li h1{
+			text-indent: -9999px;
+			background: url(img/h1_logo.png) no-repeat center;
+			background-size: 70%;
+		}
+
+
+
+		/*캐로셀 #brand*/
+		section#brand.carousel{
+			width: 100%;
+			height: 650px;
+			position: relative;
+		}
+		section#brand.carousel .gallery li{
+			width: 100%;
+			height: 100%;
+			position: absolute;
+		}
+		section#brand.carousel .gallery li:nth-child(1){
+			background: url(img/carousel_01.jpg) center;
+		}
+		section#brand.carousel .gallery li:nth-child(2){
+			background: url(img/carousel_02.jpg) center;
+		}
+		section#brand.carousel .gallery li:nth-child(3){
+			background: url(img/carousel_03.jpg) center;
+		}
+		section#brand.carousel .gallery li:nth-child(4){
+			background: url(img/carousel_04.jpg) center;
+		}
+		section#brand.carousel .gallery li:nth-child(5){
+			background: url(img/carousel_05.jpg) center;
+		}
+		section#brand.carousel .gallery li:nth-child(6){
+			background: url(img/carousel_06.jpg) center;
+		}
+
+
+
+		/*캐로셀 버튼*/
+		section#brand.carousel div.carousel_btn{
+			position: absolute;
+			width: 70%;
+			height: 200px;
+			left: 20%;
+			bottom: 0;
+		}
+		section#brand.carousel div.carousel_btn ul.btn{
+			position: absolute;
+			left: 10px;
+			width: 400px;
+			height: 50px;
+			bottom: 30px;
+		}
+		section#brand.carousel div.carousel_btn ul.btn li{
+			width: 45px;
+			height: 8px;
+			background-color: #CFC6BC;
+			float: left;
+			margin: auto 3px;
+			cursor: pointer;
+			text-indent: -9999px;
+		}
+		section#brand.carousel div.carousel_btn ul.btn li:hover, section#brand.carousel div.carousel_btn ul.btn li.active{
+			background-color: #F6CA00;
+		}
+		section#brand.carousel div.carousel_btn ul.btn li.pause{
+			width: 45px;
+			height: 45px;
+			background: url(img/icon_play.png);
+			background-size: 90px;
+			position: relative;
+			bottom: 20px;
+		}
+		section#brand.carousel div.carousel_btn ul.btn li.play{
+			width: 45px;
+			height: 45px;
+			background: url(img/icon_play.png);
+			background-size: 90px;
+			position: relative;
+			bottom: 20px;
+			background-position: -45px;
+		}
+
+
+
+		/*두 번째 컨텐츠 #menu*/
+		section#menu, section#story, section#ingredients, section#more{
+			width: 60%;
+			height: 500px;
+			position: relative;
+			margin: 60px auto;
+		}
+		section#menu div.content, section#story div.content{
+			width: 48%;
+			height: 100%;
+			float: left;
+			background-color: #EEECEC;
+			margin: 0 1%;
+			box-sizing: border-box;
+			cursor: pointer;
+			border-bottom: 5px solid #373737;
+			transition: border-bottom 0.5s;
+		}
+		section#menu div.content:hover, section#story div.content:hover{
+			border-bottom: 5px solid #F6CA00;
+		}
+		section#menu div.content div.img, section#story div.content div.img{
+			width: 100%;
+			height: 300px;
+			background: url(img/main_img_01.jpg) no-repeat center;
+			background-size: cover;
+		}
+		section#menu div.content:nth-child(2) div.img{
+			background: url(img/main_img_02.jpg) no-repeat center;
+			background-size: cover;
+		}
+		section#menu div.content p, section#story div.content p{
+			padding: 20px;
+			font-size: 1.3em;
+		}
+		section#menu div.content span.play_btn, section#story div.content span.play_btn, section#ingredients div.content span.play_btn{
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			background: url(img/btn_link.png);
+			background-size: 40px;
+			margin: 5px 10px 5px 20px;
+			transition: background-position 0.5s;
+		}
+		section#menu div.content:hover span.play_btn, section#story div.content:hover span.play_btn, section#ingredients div.content:hover span.play_btn{
+			background-position: -20px;
+		}
+		section#menu div.content span.play_btn+span, section#story div.content span.play_btn+span{
+			position: relative;
+			top: -10px;
+		}
+
+
+
+		/*세 번째 컨텐츠 #story*/
+		section#story div.content{
+			width: 33%;
+		}
+		section#story div.content:nth-child(1){
+			width: 28%;
+			background-color: #F6CA00;
+			padding: 30px;
+		}
+		section#story div.content:nth-child(1) p{
+			padding: 30px 0;
+			font-size: 1.8em;
+			font-weight: bold;
+		}
+		section#story div.content:nth-child(1) p::after, section#philosophy div.content p::after, section#ingredients .content p.title::after{
+			content: "";
+			width: 40px;
+			height: 4px;
+			background-color: black;
+			display: block;
+			margin-top: 30px;
+		}
+		section#story div.content:nth-child(2) div.img{
+			background: url(img/main_img_03.jpg) no-repeat;
+			background-size: 100%;
+		}
+		section#story div.content:nth-child(3) div.img{
+			background: url(img/main_img_04.jpg) no-repeat;
+			background-size: 100%;
+		}
+
+
+
+		/*네 번째 컨텐츠 #phiolosophy*/
+		section#philosophy{
+			width: 100%;
+			height: 650px;
+			position: relative;
+			overflow: hidden;
+		}
+		section#philosophy>div.bg{
+			width: 100%;
+			height: 100%;
+			background: url(img/main_visual_02.jpg) no-repeat center;
+			background-size: cover;
+			transition: transform 2s;
+			/*transition: all 3s;*/
+			position: absolute;
+		}
+		section#philosophy>div.bg:hover{
+			transform: scale(1.05);
+		}
+		section#philosophy div.content{
+			width: 370px;
+			height: 100%;
+			background: #373737;
+			position: absolute;
+			opacity: 0.9;
+			color: white;
+			padding: 80px 30px;
+			left: 50%;
+			margin-left: -550px;
+		}
+		section#philosophy div.content p, section#ingredients div.content p.title{
+			font-size: 2.2em;
+			font-weight: 500;
+		}
+		section#philosophy div.content p::after{
+			background-color: white;
+			margin-bottom: 30px;
+		}
+		section#philosophy div.btn{
+			border: 2px solid white;
+			width: 170px;
+			height: 60px;
+			text-align: center;
+			line-height: 60px;
+			margin-top: 120px;
+			cursor: pointer;
+		}
+		section#philosophy div.btn:hover{
+			background-color: white;
+			color: black;
+			height: 450px;
+		}
+
+
+
+		/*다섯 번째 컨텐츠 #ingredients*/
+		section#ingredients div.bg{
+			background: url(img/main_img_05.jpg) left center;
+			width: 80%;
+			height: 100%;
+			position: absolute;
+			left: 0;
+			background-size: cover;
+		}
+		section#ingredients div.content{
+			width: 380px;
+			height: 100%;
+			position: absolute;
+			right: 0;
+			background-color: #EEECEC;
+			padding: 30px;
+			box-sizing: border-box;
+		}
+		section#ingredients div.content span.paragraph{
+			position: relative;
+			top: 20px;
+		}
+		section#ingredients div.content div{
+			position: absolute;
+			bottom: 20px;
+		}
+		section#ingredients div.content span.play_btn+span{
+			position: relative;
+			top: -10px;
+		}
+		section#ingredients div.content{
+			border-bottom: 5px solid ##F6CA00;
+			cursor: pointer;
+			transition: border-bottom 0.5s;
+		}
+		section#ingredients div.content:hover{
+			border-bottom: 5px solid #F6CA00;
+		}
+
+
+
+		/*여섯 번째 컨텐츠 #more*/
+		section#more span{
+			font-size: 1.5em;
+			font-weight: 500;
+			position: absolute;
+		}
+		section#more span+span{
+			width: 80%;
+			display: block;
+			height: 16px;
+			background-color: #373737;
+			position: absolute;
+			left: 20%;
+			top: 10px;
+		}
+		section#more .content{
+			width: 32%;
+			float: left;
+			height: 260px;
+			background-color: #373737;
+			position: relative;
+			top: 100px;
+			margin-right: 2%;
+		}
+		section#more .content:nth-of-type(3){
+			margin-right: 0;
+		}
+		section#more .content:nth-child(2){
+			background: url(img/more_hansot.jpg) no-repeat center;
+			background-size: cover;
+		}
+		section#more .content:nth-child(3){
+			background: url(img/more_event.jpg) no-repeat center;
+			background-size: cover;
+		}
+		section#more .content:nth-child(4){
+			background: url(img/more_news.jpg) no-repeat center;
+			background-size: cover;
+		}
+		section#more div{
+			width: 100%;
+			height: 50px;
+			background-color: #373737;
+			position: absolute;
+			bottom: 0;
+			color: white;
+			line-height: 50px;
+			cursor: pointer;
+		}
+		section#more div p{
+			padding-left: 30px;
+			font-size: 0.9em;
+			font-weight: 500;
+		}
+		section#more div p:hover{
+			color: #F6CA00;
+		}
+		section#more div p::after{
+			content: "";
+			width: 6px;
+			height: 10px;
+			position: absolute;
+			right: 10px;
+			background: url(img/icon_cont_more.png);
+			top: 20px;
+			background-size: 12px 10px;
+		}
+		section#more div:hover p::after{
+			background-position: -6px;
+		}
+
+
+
+		/*마지막 footer 영역*/
+		#footer{
+			width: 100%;
+			/*height: 250px;*/
+			background-color: #F6CA00;
+			text-align: center;
+			padding: 50px;
+		}
+		#footer li{
+			float: left;
+		}
+		#footer ul.info li::after{
+			content: "";
+			display: inline-block;
+			width: 2px;
+			height: 14px;
+			background-color: #373737;
+			margin: 0 15px;
+		}
+		#footer ul.info li:last-child::after{
+			content: none;
+		}
+		#footer ul.info{
+			width: 640px;
+			position: absolute;
+			left: 50%;
+			margin-left: -320px;
+		}
+		#footer p{
+			margin: 10px;
+		}
+		#footer p:nth-of-type(1){
+			margin-top: 60px;
+		}
+		#footer p:nth-of-type(3){
+			margin-top: 30px;
+		}
+		#footer .sns a{
+			display: inline-block;
+			width: 40px;
+			height: 40px;
+			background: url(img/icon_sns_02.png) no-repeat;
+			background-size: 80px;
+			text-indent: -9999px;
+			margin: 20px 5px;
+		}
+		#footer .sns a:nth-child(2){
+			background-position: -40px;
+		}
+
+
+
+
+
+
+
+
+
+
+		/*반응형 미디어 쿼리*/
+		/*1) 디바이스 장치가 최소 1200px일 때: 모니터 크기가 1200px 이상일 때 → laptop 컴퓨터용*/
+		@media screen and (min-width: 1200px){
+			nav.mobileGnb{
+				display: none;
+			}
+		}
+		/*2) laptop 이하일 때*/
+		@media screen and (max-width:1199px){
+			/*body{
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+			}*/
+
+			/*모바일 네비게이션*/
+			nav.desktopGnb1{
+				display: none;
+			}
+			nav.mobileGnb{
+				display: block;
+			}
+			nav.mobileGnb ul.mobileMenu{
+				display: none;
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				z-index: 999999;
+				background-color: white;
+				top: 0;
+				padding-top: 50px;
+			}
+			nav.mobileGnb a{
+				color: black;
+			}
+			nav.mobileGnb h1{
+				width: 25px;
+				height: 25px;
+				background: url(img/m_h1_logo.png) no-repeat;
+				background-size: contain;
+				text-indent: -9999px;
+				margin: 15px;
+			}
+			nav.mobileGnb ul.mobileMenu li:last-child{
+				position: absolute;
+				right: 10px;
+				top: 10px;
+				font-weight: bold;
+			}
+			nav.mobileGnb .hamburgerBtn{
+				display: block;
+				position: absolute;
+				z-index: 999999;
+				right: 10px;
+				top: 10px;
+			}
+			nav.mobileGnb .hamburgerBtn span{
+				font-size: 2em;
+				font-weight: bold;
+			}
+			nav.mobileGnb ul.mobileMenu li a{
+				line-height: 3.5em;
+				margin-left: 50px;
+				font-weight: bold;
+				text-transform: uppercase;
+			}
+			nav.mobileGnb ul.mobileMenu li:last-child span{
+				font-size: 2em;
+				font-weight: bold;
+				cursor: pointer;
+			}
+			nav.mobileGnb ul.mobileMenu li:hover a{
+				color: #F6CA00;
+			}
+
+			/*두 번째 컨텐츠 #menu, 세 번째 컨텐츠 #story*/
+			section#menu, section#story{
+				width: 100%;
+			}
+			section#story{
+				padding-left: 40px;
+				padding-right: 40px;
+				box-sizing: border-box;
+			}
+			section#story div.content{
+				width: 48%;
+				box-sizing: border-box;
+			}
+			section#story div.content:nth-child(1){
+				width: 98%;
+				height: 300px;
+				margin-bottom: 15px;
+			}
+
+			/*네 번째 컨텐츠 #philosophy*/
+			section#philosophy{
+				top: 60px;
+			}
+			section#philosophy div.content{
+				position: absolute;
+				left: 0;
+				margin-left: 0;
+			}
+
+			/*다섯 번째 컨텐츠 #ingredients*/
+			section#ingredients{
+				padding: 60px;
+			}
+			section#ingredients .bg{
+				left: 40px;
+			}
+			section#ingredients .content{
+				width: 280px;
+			}
+			section#ingredients div.content p.title{
+				font-size: 2em;
+			}
+
+			/*여섯 번째 컨텐츠 #more*/
+			section#more{
+				display: none;
+			}
+
+			/*footer 영역*/
+			#footer{
+				position: relative;
+				top: 60px;
+			}
+
+
+		}
+
+		/*분기점을 3개로 나누는 경우 타블렛 사이즈용*/
+		@media screen and (min-width: 768px) and (max-width: 1199px){
+
+		}
+		/*분기점을 3개로 나누는 경우 모바일 사이즈용*/
+		@media screen and (max-width: 767px){
+			section#story{
+				height: 350px;
+			}
+			section#story div.content:nth-child(2) p, section#story div.content:nth-child(2) span, section#story div.content:nth-child(3) p, section#story div.content:nth-child(3) span{
+				position: relative;
+				top: -150px;
+			}
+			section#story div.content span.play_btn+span{
+				top: -160px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+		<!-- 로그인 영역 #login -->
+		<p id="login">
+			<span><a href="#"></a><a href="#"></a></span>
+			<span><a href="#">회원가입</a></span>
+			<span><a href="#">로그인</a></span>
+		</p>
+
+
+
+		<!-- 상단의 white navi -->
+		<nav class="desktopGnb1">
+			<ul>
+				<li><a href="#imdex.html"><h1>한솥</h1></a></li>
+				<li><a href="#brand">brand</a></li>
+				<li><a href="#menu">menu</a></li>
+				<li><a href="#story">story</a></li>
+				<li><a href="#philosophy">philosophy</a></li>
+				<li><a href="#ingredients">ingredients</a></li>
+				<li><a href="#more">more</a></li>
+			</ul>
+		</nav>
+		<!-- 모바일, 타블렛일 때의 네이게이션 -->
+		<nav class="mobileGnb">
+			<div class="menuBar">
+				<a href="#imdex.html"><h1>한솥</h1></a>
+				<a href="#" class="hamburgerBtn">
+					<span class="material-symbols-outlined">menu</span>
+				</a>
+			</div>
+			<ul class="mobileMenu">
+				<li><a href="#">로그인</a><a href="#">회원가입</a></li>
+				<li><a href="#brand">brand</a></li>
+				<li><a href="#menu">menu</a></li>
+				<li><a href="#story">story</a></li>
+				<li><a href="#philosophy">philosophy</a></li>
+				<li><a href="#ingredients">ingredients</a></li>
+				<li><a href="#more">more</a></li>
+				<li><span class="material-symbols-outlined">close</span></li>
+			</ul>
+		</nav>
+
+
+
+		<!-- 상단 캐로셀 #brand -->
+		<section id="brand" class="carousel">
+			<ul class="gallery">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+			<div class="carousel_btn">
+				<ul class="btn">
+					<li class="active">1</li>
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>
+					<li>5</li>
+					<li>6</li>
+					<li class="pause"></li>
+					<li class="play"></li>
+				</ul>
+			</div>
+		</section>
+
+		<!-- 두 번째 컨텐츠 #menu -->
+		<section id="menu">
+			<div class="content">
+				<div class="img"></div>
+				<p>가격 이상의 가치가 담긴 다양한 메뉴를 확인해 보세요</p>
+				<span class="play_btn"></span>
+				<span>한솥 메뉴</span>
+			</div>
+			<div class="content">
+				<div class="img"></div>
+				<p>갓 지은 한끼가 기다리고 있는 가까운 한솥 매장을 찾아보세요</p>
+				<span class="play_btn"></span>
+				<span>주변점포찾기</span>
+			</div>
+		</section>
+
+		<!-- 세 번째 컨텐츠 #story-->
+		<section id="story">
+			<div class="content">
+				<p class="title">가맹점주에게도<br>든든한 한솥입니다</p>
+				<span>점주님들의 꿈을 실현시켜 드리기 위해 가맹점주와 성공까지 동행하는 한솥! 상담부터 개업까지 모든 희로애락을 함께 합니다.</span>
+			</div>
+			<div class="content">
+				<div class="img"></div>
+				<p>한솥은 언제나 고객과 점주님들의 이익을 먼저 생각합니다</p>
+				<span class="play_btn"></span>
+				<span>Why 한솥 가맹점</span>
+			</div>
+			<div class="content">
+				<div class="img"></div>
+				<p>한솥과 함께하는 가맹점주들의 성공 스토리입니다</p>
+				<span class="play_btn"></span>
+				<span>성공수기</span>
+			</div>
+		</section>
+
+		<!-- 네 번째 컨텐츠 #philosophy -->
+		<section id="philosophy">
+			<div class="bg"></div>
+			<div class="content">
+				<p>든든한 솥밥을 위해<br>한솥이 지키고,<br>키워가는 것들</p>
+				<span>한솥은 '따끈한 도시락으로 지역사회에 공헌한다' 라는<br> 기업이념 아래, 고객 이익을 최우선으로 하며 엄선된<br>좋은 식재료만 사용하는 대한민국 외식종합기업 시장을<br>리드하는 글로벌 종합외식기업 입니다.</span>
+				<div class="btn">브랜드 철학</div>
+			</div>
+		</section>
+
+		<!-- 다섯 번째 컨텐츠 #ingredients -->
+		<section id="ingredients">
+			<div class="bg"></div>
+			<div class="content">
+				<p class="title">식재료 앞에서는<br>한없이<br>까탈스럽습니다</p>
+				<span class="paragraph">맑고 깨끗한 자연 환경속에서 재배된 식재료가 아니면 한솥이 될 수 없습니다. 모든 식재료는 고객분들이 안심하고 드실 수 있도록 엄격한 기준 아래 선별됩니다.</span>
+				<div>
+					<span class="play_btn"></span>
+					<span>식재료이야기</span>
+				</div>
+			</div>
+		</section>
+
+		<!-- 여섯 번째 컨텐츠 #more -->
+		<section id="more">
+			<p><span>더 많은 이야기</span><span></span></p>
+			<div class="content">
+				<div>
+					<p>한솥의 약속</p>
+				</div>
+			</div>
+			<div class="content">
+				<div>
+					<p>온라인 이벤트</p>
+				</div>
+			</div>
+			<div class="content">
+				<div>
+					<p>한솥 NEWS</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- footer 영역 -->
+		<div id="footer">
+			<ul class="info">
+				<li>인재채용</li>
+				<li>협력업체등록</li>
+				<li>공지사항</li>
+				<li>고객 센터</li>
+				<li>개인정보처리방침</li>
+				<li>이용약관</li>
+			</ul>
+			<br>
+			<p>대표이사 이영덕, 이하림 사업자등록번호 214-81-96569 서울시 강남구 강남대로 318(역삼동) 타워837빌딩 8,9층 T. 02-585-1114 F. 02-598-1116</p>
+			<p>E. webmaster@hsd.co.kr 한솥 도시락 고객센터 02-585-1114 전국창업설명회 02-585-1114 단체주문 1644-3288</p>
+			<p>COPYRIGHT©㈜한솥. ALL RIGHTS RESERVED.</p>
+			<div class="sns">
+				<a href="">인스타그램</a>
+				<a href="">페이스북</a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>01_DOM</title>
+</head>
+<body>
+	<h1>문서객체모델</h1>
+	<p>CSS에서는 대상에 접근하기 위해서 선택자를 사용했지만 javascript에서는 문서객체모델을 사용합니다.</p>
+	<h2>노드란 문서 상의 객체를 구분짓는 하나하나의 덩어리를 말하며 문서객체모델에는 여러 노드가 있습니다.</h2>
+	<ul>
+		<li>요소노드 element node</li>
+		<li>속성노드 attribute node</li>
+		<li>텍스트노드 text node</li>
+	</ul>
+	<h2>노드는 새로운 것이 아닙니다.</h2>
+	<ul>
+		<li>지금까지 다루었던 태그들(h1, li, p)이 요소노드입니다.</li>
+		<li>html lang="ko"에서의 lang 속성이 속성노드입니다.</li>
+		<li>요소노드가 감싸고 있는 컨텐츠가 텍스트노드입니다.</li>
+	</ul>
+	<script>
+		document.getElementsByTagName("li")[0].onclick=function(){
+			document.getElementsByTagName("li")[0].firstChild.nodeValue="드디어 바꿨다!!"
+		}
+		var li_len = document.getElementsByTagName("li").length;
+		window.alert(li_len); //최상위 객체(window0) 생략
+	</script>
+</body>
+</html>

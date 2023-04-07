@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>02_show_hide_mouseover_mouseout</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+	<button id="event_btn">이벤트 보기</button>
+	<button class="stop_event">이벤트 그만보기</button>
+	<button>이벤트 보기/닫기</button>
+	<p>이벤트에 참여하시려면 복권을 긁어주세요</p>
+	<h1><mark>복권 긁기</mark></h1>
+	<p>이벤트에 당첨되지 않으신 분들을 위해 한 번 더 당첨 기회를 드립니다.</p>
+	<h2><mark>두 번째 복권 긁기</mark></h2>
+	<br><br><br>
+	<img src="img/kona.jpg" alt="kona">
+	<button class="starbucks_btn">스타벅스 출시 봄상품 보기</button>
+	<button class="starbucks_hide_btn">봄상품 숨기기</button>
+	<button class="starbucks_toggle_btn">봄상품 보이고 숨기기</button><br>
+	<img src="img/starbucks_event.jpg" alt="" class="starbucks_img">
+	<script>
+		$(document).ready(function(){
+			//html이 로딩되었을 때 동작하겠다.
+			$("img").hide();
+			$("#event_btn").click(function(){
+				/*show(), hide(), toggle() 안에는 매개변수로 키워드(slow, fast)나 millisecond 단위로 동작하는 시간을 초로 넣을 수 있다.*/
+				$("img").show("slow");
+			})
+			$(".stop_event").click(function(){
+				$("img").hide("fast");
+			})
+			$("button:nth-child(3)").click(function(){
+				$("img").toggle(3000);
+			})
+
+			var result = $("h1").html();
+			/*alert("당첨결과가 궁금하세죠? 복권을 긁어보세요");*/
+			$("h1").mouseover(function(){
+				$("h1").html("<mark>코나 자동차 당첨!!!</mark>")
+				/*alert("축하합니다!! 당첨되었습니다!!");*/
+			})
+
+			$("h2").mouseout(function() {
+				var result2 = $("h2").text();
+				/*alert(result2);*/
+				$("h2").text("아쉽게도 이번에는 당첨되지 않았습니다. 다음 기회를 이용해주세요.")
+			})
+
+			$(".starbucks_btn").click(function(){
+				/*$(".starbucks_img").slideDown(500);*/
+				$(".starbucks_img").fadeTo(500,1);
+				/*fadeTo(millisecond,opacity) 두 개의 매개변수가 들어간다.*/
+			})
+			$(".starbucks_hide_btn").click(function(){
+				/*$(".starbucks_img").slideUp(500);*/
+				$(".starbucks_img").fadeTo(500,0);
+			})
+			$(".starbucks_toggle_btn").click(function(){
+				/*$(".starbucks_img").slideToggle(500);*/
+				$(".starbucks_img").fadeToggle(500);
+				/*fadeToggle(millisecond) 매개변수 하나만 들어간다.*/
+			})
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>05_attr method</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<style>
+		img{
+			border: 15px solid pink;
+			border-top-color: hotpink;
+			border-block-color: hotpink;
+			width: 330px;
+			height: 105px;
+		}
+		.protect{
+			width: 500px;
+			height: 400px;
+			background: url(img/protect1.png) center;
+			background-size: cover;
+		}
+	</style>
+</head>
+<body>
+	<h1>환경을 보호하는 두 가지 방법</h1>
+	<button>첫 번째 방법</button>
+	<button>두 번째 방법</button>
+	<br><br><br>
+	<img src="img/btn.png" alt="" title="사용하지 않는 전등 끄기">
+	<div class="protect"></div>
+	<mark></mark>
+	<script>
+		$(function(){
+			var btn = $("button");
+			var img = $("img");
+			var protectImg = $(".protect");
+			var txt = $("mark");
+
+			btn.eq(0).click(function(){
+				img.attr({"src":"img/doggybag1.gif", "title":"장바구니 들고 다니기"});
+				txt.html("<h1><mark>장바구니 들고 다니기</mark></h1>")
+			})
+			btn.eq(1).click(function(){
+				protectImg.css("background-image","url(img/protect2.png)");
+				txt.html("<h1><mark>일회용 재활용하기</mark></h1>")
+			})
+		})
+	</script>
+</body>
+</html>

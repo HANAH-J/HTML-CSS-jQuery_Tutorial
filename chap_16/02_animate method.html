@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>02_animate method</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<style>
+		#box{
+			width: 100px;
+			height: 100px;
+			background-color: orange;
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<button>키 늘리기</button><button>키 줄이기</button><br>
+	<div id="box"></div>
+	<script>
+		$(function(){
+			function myfunction1(){
+				alert("애니메이션 시작");
+			}
+			function myfunction2(){
+				alert("애니메이션 끝");
+			}
+			var btn = $("button");
+			var btn = $("#box");
+			btn.eq(0).click(function(){
+				box.animate({"height":500,"opacity":0.5},2000,"linear",myfunction1());
+			})
+			//animate({styles},millisecond,easing,callback)
+			btn.eq(1).click(function(){
+				box.animate({"height":100,"opacity":1},2000,"linear",myfunction2());
+			})
+		})
+	</script>
+</body>
+</html>

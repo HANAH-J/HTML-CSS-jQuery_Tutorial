@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>03_css(), text() method review</title>
+	<style>
+		button{font-size: 2em;} 
+		.box{width:300px;
+			height:300px;
+			background-color: lightgray;
+			margin-top:10px;
+			font-size: 2em;
+			color:white;}
+	</style>
+</head>
+<body>	
+	<!--핵심포인트 정리
+	$("선택자").text(); 컨텐츠(텍스트) 가져오기
+	$("선택자").text("변경할 문자열"); 문자 변경하기
+	$("선택자").css("속성명") :스타일 속성값 불러오기
+	$("선택자").css("속성명","속성값") :스타일 속성값 세팅하기
+	$("선택자").css({"속성명":"속성값","속성명":"속성값"}) :여러개의 스타일 속성값 세팅하기
+	-->
+	<button>red</button>
+	<button>blue</button>
+	<button>green</button>
+	<button>pink</button>
+	<div class="box"></div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script>
+	$(function(){
+		var btn = $("button");
+		var box = $(".box");
+
+		btn.click(function(){
+			var color = $(this).text();
+			// alert(color);
+			box.css("background-color",color);
+		})
+	})
+	</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>02_width(), height() method review</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="js/prefixfree.min.js"></script>
+	<style>
+		#line{
+			border:5px solid silver; 
+			padding:5px; 
+			margin-top: 10px; 
+			padding-top: 50px;
+			width: 80%;
+			position: absolute;
+			left: 10%;
+		}
+		#line div{
+			text-align: center;
+			padding: 10px;
+		}
+		img{
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div id="line">
+		<img src="img/bird17.gif" alt="">
+		<img src="img/cat051.gif" alt="">
+		<img src="img/dog061.gif" alt="">
+		<img src="img/bird30.gif" alt="">
+		<img src="img/dog060.gif" alt="">
+		<img src="img/bird20.gif" alt="">
+		<img src="img/huk2.gif" alt="">
+		<img src="img/shiba2.gif" alt="">
+		<div id="text">동물들을 클릭해 보세요</div>
+	</div>
+	
+	<script>
+		$(function(){
+			var animal = $("#line img");
+			var txt = $("#text");
+
+			animal.click(function(){
+				// var height = $(this).css("height");
+				var height = $(this).height();
+				//width(), height();
+				txt.text("당신이 선택한 동물의 키는 "+height+"입니다.");
+			})
+		})
+	</script>
+</body>
+</html>

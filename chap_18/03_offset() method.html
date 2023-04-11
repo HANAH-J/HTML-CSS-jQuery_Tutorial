@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>03_offset() method</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<style>
+		div{
+			width:200px;
+			height:200px;
+			background-color: blue;
+			position: absolute;
+			left:300px;
+			top:600px;
+			/*bottom:600px;*/
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+	<h1></h1>
+	<button>버튼을 클릭하여 박스의 위치 확인하기</button>
+	<button>버튼을 클릭하여 박스의 위치 이동하기</button>
+	<button>버튼을 클릭하여 사용자가 원하는 위치로 박스 이동하기</button>
+	<script>
+		$(function(){
+			var box = $("div");
+			var po = box.offset();
+			var poX = po.left;
+			var poY = po.top;
+			var result = $("h1");
+			var btn = $("button");
+
+			result.text("[ " + poX + ", " + poY + " ]");
+			btn.eq(0).click(function(){
+				var po = box.offset();
+				var poX = po.left;
+				var poY = po.top;
+				result.text("박스의 위치는 left 기준으로 " + poX + "px 떨어져 있고, 상단 top을 기준으로 " + poY + "px 떨어져 있습니다.")
+			})
+			btn.eq(1).click(function(){
+				box.offset({"left":100, "top":300});
+			})
+			btn.eq(2).click(function(){
+				var top = prompt("좌측으로부터 이동하고자 하는 위치를 입력하세요.")
+				var left = prompt("상단으로부터 이동하고자 하는 위치를 입력하세요.");
+				box.offset({"left":left, "top":top});
+			})
+		})
+	</script>
+</body>
+</html>

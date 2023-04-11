@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style>
+	*{margin: 0;
+	padding: 0;}
+	.box{
+		height:100px;
+		width:300px;
+		padding:10px;
+		margin:3px;
+		border:5px solid blue;
+		background-color:lightblue;
+		float: left;
+	}
+	.clear{
+		clear: both
+	}
+</style>
+</head>
+<body>
+
+<div class="box"></div>
+<div class="box"></div>
+<div class="clear"></div>
+<button>요소의 가로길이 얻어오기</button>
+<button>박스의 크기 변형하기</button>
+<p>width(), height() 메소드: 요소의 가로, 세로 길이를 불러오거나 세팅하는 메소드</p>
+<p>innerWidth(), innerHeight(): 요소의 가로, 세로 길이 + padding을 포함한 값을 불러오거나 세팅하는 메소드</p>
+<p>outerWidth(), outerHeight(): 요소의 가로, 세로 길이 + padding, border까지 포함한 값을 불러오거나 세팅하는 메소드</p>
+<p>outerWidth(true), outerHeight(true): 요소의 가로, 세로 길이 + padding, border, margin까지 포함한 값을 불러오거나 세팅하는 메소드</p>
+<script>
+	$(function(){
+		var box = $(".box");
+		var btn = $("button");
+
+		btn.eq(0).click(function(){
+			var wd = box.width(); //300
+			var innerWd = box.innerWidth(); //320
+			var outerWd = box.outerWidth(); //330
+			var outerWdTrue = box.outerWidth(true); //336
+			alert(outerWdTrue);
+		})
+
+		btn.eq(1).click(function(){
+			// box.eq(1).width(400);
+			// box.eq(1).innerWidth(460);
+			box.eq(1).outerWidth(466);
+		})
+	})
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>02_scroll distance</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="js/prefixfree.min.js"></script>
+	<style>
+		*{padding:0; margin:0;}
+		body{width:2000px;
+			height:3000px;}
+		p{font-size: 2em; position:fixed;}	
+		.top{
+			width: 100px;
+			height: 100px;
+			position: fixed;
+			right: 50px;
+			bottom: 50px;
+		}
+	</style>
+</head>
+<body>		
+	<h1>내가 가로 세로로 스크롤한 값을 알아내기<br>
+	<button>페이지 하단으로 이동</button></h1><br>
+	<button class="top">▲Top</button><br>
+	<p>test</p>
+	
+	<script>
+		$(function(){
+			var btn = $("button");
+
+			$(window).scroll(function(){
+				var scrollTop = $(window).scrollTop();
+				var scrollLeft = $(window).scrollLeft();
+				var val = $("p");
+				val.text(scrollLeft + "," + scrollTop);
+			})
+
+			//버튼을 클릭했을 때 세로 스크롤이 하단으로 이동
+			btn.eq(0).click(function(){
+				$(window).scrollTop(2090);
+			})
+			//버튼을 클릭했을 때 세로 스크롤이 상단으로 이동
+			btn.eq(1).click(function(){
+				$(window).scrollTop(0);
+			})
+		})
+	</script>
+</body>
+</html>

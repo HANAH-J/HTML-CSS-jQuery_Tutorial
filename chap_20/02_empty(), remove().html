@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>02_empty(), remove()</title>
+	
+	<style>
+		#line{border:5px solid silver; padding:5px; margin-top: 10px; padding-top: 50px;}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+	라인 안에 줄을 서야 합니다. 어떤 사람이 줄을 서있는데..... <br><br>
+	<button class="btn1">사람이 한 명 왔어요</button>
+	<button class="btn2">개가 끼어 들었어요</button>
+	<button class="btn3">새는 착하게 뒤에 줄을 섰어요</button>
+	<button class="btn4">닭이 앞에서 기웃거려요</button>
+	<button>empty() 메소드로 라인 안의 모두 집에 보내기</button>
+	<button>remove() 메소드로 행사장 철거하기</button>
+	<br>
+	<div id="line">
+		<img src="img/huk.gif" alt="">
+	</div>
+	<div class="lineStop">그만 왔으면 좋겠다...</div>
+	<!--핵심포인트 정리
+	Dom을 추가하는 메소드가 있다면 Dom을 삭제하는 메소드도 존재한다.
+	1) empty() : 선택한 요소 안쪽의 요소를 제거하는 메소드
+	2) remove() : 선택한 요소와 안쪽의 요소뿐만 아니라 스타일과 이벤트까지 제거하는 메소드
+	-->
+	
+	<script>
+		$(function(){
+			var btn = $("button");
+			var line = $("#line");
+			btn.eq(0).click(function(){
+				line.prepend("<img src='img/huk.gif'>");
+			})
+			btn.eq(1).click(function(){
+				line.prepend("<img src='img/dog061.gif'>");
+			})
+			btn.eq(2).click(function(){
+				line.append("<img src='img/bird30.gif'>");
+			})
+			btn.eq(3).click(function(){
+				line.before("<img src='img/bird17.gif'>");
+			})
+			btn.eq(4).click(function(){
+				line.empty();
+			})
+			btn.eq(5).click(function(){
+				line.remove();
+			})
+		})
+			
+
+	</script>
+	
+</body>
+</html>

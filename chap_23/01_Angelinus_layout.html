@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Angelinus_layout</title>
+	<style>
+		*{margin: 0;
+		padding: 0;}
+
+		body{
+			width: 100%;
+		}
+
+		#wrapper{
+			width: 800px;
+			margin: 3.5px auto;
+			border: 1px solid gray;
+		}
+
+		#whole{
+			border: 1px solid gray;
+		}
+
+
+
+		/*nav_top style*/
+		#nav_top{
+			border: 1px solid blue;
+			margin: 3.5px 3.5px 0;
+			padding: 3.5px;
+			overflow: hidden;
+		}
+		.lnb1{
+			border: 1px solid red;
+			width: 60%;
+			float: right;
+		}
+		.lnb1 div{
+			border: 1px solid red;
+			width: 14.285%;
+			float: left;
+			box-sizing: border-box;
+			text-align: center;
+		}
+
+
+
+		/*nav_center style*/
+		#nav_center{
+			border: 1px solid green;
+			margin: 0 3.5px;
+			overflow: hidden;
+		}
+		.lnb2{
+			border: 1px solid red;
+			margin: 3.5px;
+			float: left;
+			width: 99%;
+		}
+		.lnb2 div{
+			border: 1px solid red;
+			width: 14.285%;
+			float: left;
+			box-sizing: border-box;
+			text-align: center;
+			font-size: 1.5em;
+		}
+
+
+
+		/*blank style*/
+		#blank{
+			border: 1px solid gray;
+			margin: 0 3.5px;
+		}
+		#blank div{
+			border: 1px solid gray;
+			margin: 3.5px;
+			padding: 4px;
+		}
+
+
+
+		/*header style*/
+		header{
+			border: 1px solid orange;
+			overflow: hidden;
+		}
+		header article{
+			border: 1px solid gray;
+			float: left;
+			box-sizing: border-box;
+			height: 150px;
+		}
+		header article:nth-child(1){
+			width: 20%;
+			margin: 3.5px 0 3.5px 3.5px;
+			padding: 3.5px;
+			font-size: 0.8em;
+		}
+		header article:nth-child(2){
+			width: 10%;
+			margin: 3.5px 0;
+			padding: 2px;
+			overflow: hidden;
+			font-size: 0.8em;
+		}
+		header article div{
+			border: 1px solid gray;
+			width: 99%;
+			height: 25%;
+			box-sizing: border-box;
+			padding: 3.5px;
+		}
+		header article:nth-child(3){
+			width: 69%;
+			margin: 3.5px 3.5px 3.5px 0px;
+			float: left;
+			box-sizing: border-box;
+			padding: 3.5px;
+			font-size: 0.8em;
+		}
+		
+
+
+		/*ad style*/
+		#ad{
+			text-align: center;
+			font-weight: bold;
+		}
+		.english{
+			font-size: 1.1em;
+		}
+		.korean{
+			font-size: 0.8em;
+		}
+
+
+
+		/*section style*/
+		section{
+			width: 99%;
+			height: 200px;
+			margin: 0 auto 3.5px;
+			border: 1px solid gray;
+			overflow: hidden;
+		}
+		section .content{
+			width: 70.5%;
+			border: 1px solid gray;
+			float: left;
+/*			overflow: hidden;*/
+		}
+		section .content article:nth-child(1){
+			border: 1px solid gray;
+			background-color: yellow;
+			margin: 3.5px 3.5px 0 3.5px;
+			float: left;
+			width: 98%;
+			height: 65px;
+			box-sizing: border-box;
+			padding: 3.5px;
+		}
+		section .content article:nth-child(2n+2){
+			border: 1px solid gray;
+			background-color: pink;
+			margin: 0 0 0 3.5px;
+			width: 49%;
+			height: 65px;
+			float: left;
+			box-sizing: border-box;
+			padding: 3.5px;
+		}
+		section .content article:nth-child(2n+3){
+			border: 1px solid gray;
+			background-color: pink;
+			margin: 0;
+			width: 49%;
+			height: 65px;
+			float: left;
+			box-sizing: border-box;
+			padding: 3.5px;
+		}
+		aside{
+			border: 1px solid gray;
+			width: 29.2%;
+			float: left;
+			box-sizing: border-box;
+		}
+		aside div:nth-child(1){
+			border: 1px solid gray;
+			background-color: skyblue;
+			margin: 3.5px 3.5px 0;
+			width: 97%;
+			height: 130px;
+			box-sizing: border-box;
+			float: left;
+			padding: 3.5px;
+		}
+		aside div:nth-child(2){
+			border: 1px solid gray;
+			margin: 0 3.5px 3.5px;
+			width: 97%;
+			height: 62px;
+			box-sizing: border-box;
+			float: left;
+			padding: 3.5px;
+		}
+
+
+
+		/*nav_bottom style*/
+		#nav_bottom{
+			width: 100%;
+			border: 1px solid gray;
+			overflow: hidden;
+			background-color: white;
+			position: relative;
+		}
+		.nav_bottom{
+			width: 800px;
+			overflow: hidden;
+			text-align: center;
+			padding: 3.5px;
+			position: relative;
+			left: 50%;
+			margin-left: -400px;
+		}
+		.nav_bottom div{
+			border: 1.5px solid pink;
+			width: 113px;
+			float: left;
+			box-sizing: border-box;
+			position: relative;
+		}
+
+
+
+		/*footer style*/
+		footer{
+			background-color: lightgray;
+			padding: 3.5px;
+		}
+		footer div{
+			width: 800px;
+			border: 1px solid black;
+			position: relative;
+			left: 50%;
+			margin-left: -400px;
+			font-size: 0.8em;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="whole">
+			<nav id="nav_top">
+				<div class="lnb1">
+					<div>로그인</div>
+					<div>회원가입</div>
+					<div>고객의소리</div>
+					<div>윤리경영</div>
+					<div>가맹점모집</div>
+					<div>angelis mall</div>
+					<div>language</div>
+				</div>
+			</nav>
+
+			<nav id="nav_center">
+				<div class="lnb2">
+					<div>menu</div>
+					<div>card</div>
+					<div>event</div>
+					<div>angelinous coffee</div>
+					<div>about us</div>
+					<div>our coffee</div>
+					<div>store</div>
+				</div>
+			</nav>
+
+			<div id="blank">
+				<div></div>
+			</div>
+		</div>
+
+		<header>
+			<article>share</article>
+			<article>
+				<div>facebook</div>
+				<div>twitter</div>
+				<div>kakao story</div>
+				<div>instagram</div>
+			</article>
+			<article>banner_advertisment</article>
+		</header>
+
+		<div id="ad">
+			<p class="english">Take your Time Angel-in-us</p>
+			<p class="korean">당신을 미소 짓게 하는 천사의 커피</p>
+		</div>
+
+		<section>
+			<div class="content">
+				<article>contect1</article>
+				<article>contect2</article>
+				<article>contect3</article>
+				<article>contect4</article>
+				<article>contect5</article>
+			</div>
+			<aside>
+				<div>content1</div>
+				<div>content2</div>
+			</aside>
+		</section>
+	</div>
+
+	<nav id="nav_bottom">
+		<div class="nav_bottom">
+			<div>logo</div>
+			<div>menu</div>
+			<div>card</div>
+			<div>event</div>
+			<div>about us</div>
+			<div>out coffee</div>
+			<div>store</div>
+		</div>
+	</nav>
+
+	<footer>
+		<div>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio possimus pariatur laborum molestiae maiores cupiditate rerum, voluptas incidunt quo obcaecati ratione, voluptatum reiciendis non provident eaque quae voluptates, voluptatibus accusantium id doloremque aperiam, praesentium error eius. Expedita, blanditiis. Consequatur voluptates inventore illum ducimus accusamus itaque omnis ipsum amet, sit quos praesentium facilis sint numquam cumque, nobis obcaecati, deserunt, dicta veritatis perspiciatis voluptate quis dignissimos incidunt. Itaque, molestias fugit beatae dignissimos!
+		</div>
+	</footer>
+	
+</body>
+</html>
